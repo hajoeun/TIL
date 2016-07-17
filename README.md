@@ -1,7 +1,6 @@
 # Today I Learned
 
-JoeunHa가 오늘 새로 배운 것을 다음의 규칙으로 commit 합니다. [thoughtbot til 참고](https://github.com/thoughtbot/til)
-(JayJin의 TIL을 fork하여 작성합니다. [milooy til 참고](https://github.com/milooy/TIL))
+JoeunHa가 오늘 새로 배운 것을 다음의 규칙으로 commit 합니다. (JayJin의 TIL을 근간으로 작성합니다. [milooy til 참고](https://github.com/milooy/TIL))
 
 ## 작성 규칙
 - 문서 생성은 [GFM (Github Flavored Markdown)](https://help.github.com/articles/github-flavored-markdown/) 을 사용한다. (확장자 `.md`)

@@ -1,6 +1,6 @@
 **Regular Expression(정규표현식)**
 
-1. 예제 01
+## 1. 예제 01
 
 ```
 // Setup
@@ -22,7 +22,7 @@ var andCount = testString.match(expression).length;
 
 
 
-2. 예제 02
+## 2. 예제 02
 
 ```
 // Setup
@@ -40,7 +40,7 @@ var digitCount = testString.match(expression).length;
 
 
 
-3. 예제 03
+## 3. 예제 03
 
 ```
 // Setup

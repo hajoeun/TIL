@@ -23,11 +23,12 @@ $ curl get.pow.cx/uninstall.sh | sh
 ```
 
 ### 사용법
-다음 설정을 하고 브라우저에서 [http://til.wiki.dev/](http://til.wiki.dev/)로 접속한다.
+다음 설정을 통해 브라우저에서 [http://til.wiki.dev/](http://til.wiki.dev/)로 접속한다.
 
 ```bash
 $ cd ~/.pow
 $ ln -s path/to/this_local_repo til.wiki
+$ open http://til.wiki.dev/
 ```
 
 ### Anvil 설치

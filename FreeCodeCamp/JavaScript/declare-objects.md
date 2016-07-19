@@ -3,7 +3,7 @@
 ## 1. 예제 01
 변수로서의 객체 선언
 
-```
+```javascript
 var car = {
   "wheels":4,
   "engines":1,
@@ -23,7 +23,7 @@ var motorBike = {
 ## 2. 예제 02
 생성자(constructor)를 이용한 객체 선언
 
-```
+```javascript
 var Car = function() {
   this.wheels = 4;
   this.engines = 1;
@@ -43,7 +43,7 @@ var MotorBike = function() {
 ## 3. 예제 03
 `new` 키워드를 이용한 객체의 인스턴스(instance) 선언
 
-```
+```javascript
 var Car = function() {
   this.wheels = 4;
   this.engines = 1;

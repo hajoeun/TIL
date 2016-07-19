@@ -3,7 +3,7 @@
 ## 1. this의 사용
 - 함수 안에서 사용된 this는 함수를 포함하고 있는 객체를 참조한다.
 - 이는 함수를 호출할 때 자바스크립트가 자동으로 만들어 삽입하는 객체이다.
-```
+```javascript
 var cody = {
   living: true,
   age: 32,
@@ -17,7 +17,7 @@ console.log(cody.getGender()); //'male'이 기록된다.
 
 ## 2. this의 값은 어떻게 정해지는가?
 - this의 값은 함수가 호출될 때의 컨텍스트(context)에 따라 달라진다.
-```
+```javascript
 var foo = 'foo';
 var myObject = {foo: 'I am myObject.foo'};
 
@@ -34,7 +34,7 @@ sayFoo(); //문맥상 전역에서 호출된 this가 된다. 따라서, 'foo'가
 ### 1. 중첩된 함수의 this는 머리 객체(head object)를 참조한다.
 - 함수 내에 함수를 정의하거나 다른 함수의 컨텍스트 내에서 호출되면 this의 값은 항상 머리 객체를 참조한다.
 - 브라우저의 경우 머리 객체는 window 객체다.
-```
+```javascript
 var foo = 'I am window.foo'
 
 var myObject = {
@@ -54,7 +54,7 @@ myObject.func1();
 ```
 
 - 중첩된 함수 문제는 스코프 체인을 사용해 우회한다.
-```
+```javascript
 var myProperty = 'I am window.myProperty';
 
 var myObject = {
@@ -74,7 +74,7 @@ myObject.myMethod();
 ### 2. call() 또는 apply()를 사용한 this 값 설정
 - apply()나 call()을 사용해 함수를 호출할 때 this가 참조할 객체를 정해주는 식으로 this의 값을 조작할 수 있다. "이봐, X 함수를 호출해. 하지만 X 함수에는 this 값으로 Z 객체를 사용해라고 일러둬"
 - 이 방식을 사용하면 바로 자바스크립트에서 설정한 this의 값을 재정의할 수 있다.
-```
+```javascript
 var myObject = {};
 
 var myFunction = function(param1, param2) {
@@ -91,7 +91,7 @@ myFunction.call(myObject, 'I am foo', 'I am bar'); //myObject를 this로 설정�
 - new 키워드를 사용해 함수를 실행할 때 생성자 함수 내에 코딩된 this의 값은 생성자 인스턴스를 가리킨다.
 - new 키워드를 사용해 생성자 함수를 호출하면 이때의 this는 '만들어질 객체'를 참조한다.
 - new 키워드를 사용하지 않았다면 this의 값은 사용자 정의 함수가 호출된 컨텍스트가 된다.
-```
+```javascript
 var Person = function(name) {
   this.name = name || 'Jason Bone';
 }
@@ -105,7 +105,7 @@ console.log(window.name); //'Matthew Damon'이 기록된다.
 ```
 
 - 프로토타입 메소트 안의 this는 생성자 인스턴스를 참조한다.
-```
+```javascript
 var Person = function(name) {
   this.name = name || 'Jason Bone';
 }

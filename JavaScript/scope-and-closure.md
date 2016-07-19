@@ -5,7 +5,7 @@
 - 스코프는 크게 전역(global), 지역(local, 혹은 함수), 그리고 eval 스코프로 나뉜다.
 - **자바스크립트에는 블록 스코프가 없다.**
 
-```
+```javascript
 var foo = 1;
 
 if (true) {
@@ -20,7 +20,7 @@ if (true) {
 } //블록 스코프가 없기 때문에 프로그램이 진행됨에 따라 foo값이 변경된다.
 ```
 - 자바스크립트에서는 var 키워드 없이 변수를 선언하면 지역 스코프가 아닌 전역 스코프에 변수가 추가된다.
-```
+```javascript
 var foo = function() {
   var boo = function() {
     var bar = 2;
@@ -35,7 +35,7 @@ console.log(bar); //bar는 boo 함수 스코프 내에만 있으므로 에러가
 ## 2. 스코프 체인(문법적 스코프)
 - 자바스크립트는 변수를 찾을 때 스코프의 계층 구조에 기반한 검색 체인을 거슬러 올라가며 추적한다.
 - 이때 스코프 체인에서 가장 가까운 스코프부터 검색하며, 값을 찾으면 상위 스코프에 같은 이름의 값이 있더라도 가장 먼저 찾은 값을 검색 결과로 인정한다.
-```
+```javascript
 var x = 10;
 var foo = function() {
   var y = 20;
@@ -52,7 +52,7 @@ var foo = function() {
 ## 3. 클로저(closure)
 - 스코프 체인은 함수를 호출하기 **전에** 이미 만들어진다. 덕분에 클로저를 만들 수 있다.
 - 예를 들어, 다른 함수 내부에 정의되어 있다가 전역 스코프로 반환된 함수가 있다고 가정해 볼 때, 반환된 함수는 전역 스코프에 있더라도 스코프 체인을 통해 부모 함수(이미 종료된 함수)에 여전히 접근할 수 있다. => **클로저의 핵심 개념**
-```
+```javascript
 var parentFunction = function() {
   var foo = 'foo';
   return function() { //반환되는 익명 함수는 parentFunction 내부의 변수인 foo를 참조하고 있다.
@@ -65,7 +65,7 @@ var nestedFunction = parentFunction();
 nestedFunction(); //parentFunction()에 의해 반환 받은 익명 함수에 의해서 이미 종료된 함수 내부의 변수, foo에 접근할 수 있다.
 ```
 
-```
+```javascript
 var countUpFromZero = function() {
   var count = 0;
   return function() {

@@ -2,7 +2,7 @@
 
 ## 1. 예제 01
 
-```
+```javascript
 // Setup
 var testString = "Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it.";
 
@@ -24,7 +24,7 @@ var andCount = testString.match(expression).length;
 
 ## 2. 예제 02
 
-```
+```javascript
 // Setup
 var testString = "There are 3 cats but 4 dogs.";
 
@@ -42,7 +42,7 @@ var digitCount = testString.match(expression).length;
 
 ## 3. 예제 03
 
-```
+```javascript
 // Setup
 var testString = "How many spaces are there in this sentence?";
 

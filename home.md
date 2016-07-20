@@ -6,7 +6,7 @@
 ###  a. JavaScript
 - [regular-expression.md](http://til.wiki.dev/FreeCodeCamp/JavaScript/regular-expression)
 - [declare-objects.md](http://til.wiki.dev/FreeCodeCamp/JavaScript/declare-objects)
-
+- [methods-of-array.md](http://til.wiki.dev/FreeCodeCamp/JavaScript/methods-of-array)
 
 ## 2. JavaScript
 - [this-keyword.md](http://til.wiki.dev/JavaScript/this-keyword)

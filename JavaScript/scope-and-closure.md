@@ -3,7 +3,7 @@
 ## 1. 자바스크립트의 스코프(scope)
 - 자바스크립트에서 스코프는 코드가 실행되는 컨텍스트이다.
 - 스코프는 크게 전역(global), 지역(local, 혹은 함수), 그리고 eval 스코프로 나뉜다.
-- **자바스크립트에는 블록 스코프가 없다.**
+- 자바스크립트에는 블록 스코프가 없었다.(ES6 이전 버전에 해당)
 
 ```javascript
 var foo = 1;
@@ -77,3 +77,8 @@ console.log(countUpFromZero()); //1이 기록된다.
 console.log(countUpFromZero()); //2가 기록된다.
 console.log(countUpFromZero()); //3이 기록된다.
 ```
+
+
+## 4. [let 키워드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/let#Block_scope_with_let)
+- ECMAScript2015(ES6)에서는 var대신 let 키워드를 이용하여 블록 스코프를 지원한다.
+- let 키워드는 블록 스코프를 갖는 지역 변수를 선언하며, 임의로 값을 초기화할 수 있다.

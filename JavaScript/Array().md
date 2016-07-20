@@ -44,16 +44,16 @@ console.log(bar[0], bar.length); //'undefined 100'이 기록된다.
   - input
   - length
 - **인스턴스 메소드**
-  - pop()
-  - push()
-  - reverse()
-  - shift()
-  - sort()
-  - splice()
-  - unshift()
-  - concat()
-  - join()
-  - slice()
+  - pop() 마지막 항목을 제거한다.
+  - push() 마지막에 하나 이상의 항목을 추가한다.
+  - reverse() 요소를 비교하여 내림차순으로 정렬한다.
+  - shift() 배열의 시작부분에 항목을 제거한다.
+  - sort() 요소를 비교하여 오름차순으로 정렬한다.
+  - splice() 구역을 삭제하거나 항목을 추가해서 배열을 수정할 수 있게 한다.
+  - unshift() 배열의 시작부분에 항목을 추가한다.
+  - concat() 해당 배열에 지정한 항목들을 추가한 새로운 배열을 반환한다.
+  - join() 요소를 하나의 문자열로 병합하여 반환한다.
+  - slice() 배열의 일부분을 반환한다.
 
 
 ## 5. 배열 만들기, 값을 추가하고 갱신하기

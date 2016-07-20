@@ -24,7 +24,7 @@ console.log(numberLiteral, typeof numberLiteral); //'1' 'number'가 기록된다
   - prototype
 
 
-## 3. String 객체 인스턴스의 속성과 메소드
+## 3. Number 객체 인스턴스의 속성과 메소드
 - **인스턴스 속성**
   - constructor
 - **인스턴스 메소드**

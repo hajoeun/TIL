@@ -39,10 +39,8 @@ console.log(bar[0], bar.length); //'undefined 100'이 기록된다.
 
 ## 4. Array 객체 인스턴스의 속성과 메소드
 - **인스턴스 속성**
-  - constructor
-  - index
-  - input
-  - length
+  - constructor 생성자 타입을 반환한다.
+  - length 배열의 길이를 반환한다.
 - **인스턴스 메소드**
   - pop() 마지막 항목을 제거한다.
   - push() 마지막에 하나 이상의 항목을 추가한다.

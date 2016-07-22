@@ -175,11 +175,50 @@ bar();
 
 
 ## Q&A. 여러가지 의문들
-1. 왜 함수는 이토록 다양한 방법으로 선언되고 다양한 방법으로 호출되는가?
+#### 1. 왜 함수는 이토록 다양한 방법으로 선언되고 다양한 방법으로 호출되는가?
   - 각각의 쓰임이 다르기 때문이다. 우선 __함수 생성자의 경우__ 문자열로 만들 수 있는 실행부가 가지는 이 점을 가지는 경우가 존재한다. 조건에 따라 함수 내부 코드 자체가 변해야하는 경우 `+`를 이용하여 다른 실행부를 만들 수 있기 때문이다. 리터럴 표기법 중 __함수 선언문의 경우__ 함수 호이스팅이 가능한 유일한 선언법이라는 점에서 필요성을 가진다. 반면 __함수 표현식의 경우__ 자기 호출 표현식이 가능하고 경우에 따라 함수가 아닌 다른 변수를 저장할 수 있도록 해주기에 필요성을 가진다.
 
-2. 고차함수가 필요한 이유는 무엇인가?
+#### 2. 고차함수가 필요한 이유는 무엇인가?
   - 고차함수의 의의는 함수가 값으로써 전달 가능하다는데 있다. 함수가 값으로써 전달 가능하기에 특정 변수에 함수가 아닌 일반 원시값을 저장하는 형태의 코드가 작성 가능해진다. 이는 함수 표현식과 맞물려 생각할 수 있는 부분이다.
 
-3. 자바스크립트에서는 왜 굳이 '함수 선언문'만을 먼저 해석하는 것인가? (호이스팅이 가능한 유일한 경우)
+#### 3. 자바스크립트에서는 왜 굳이 '함수 선언문'만을 먼저 해석하는 것인가? (호이스팅이 가능한 유일한 경우)
   - 우선 성능상의 문제 때문이다. 다른 경우를 모두 해석하게 되면 전체적인 성능 저하를 야기할 수 있다. 특히나 함수 표현식의 경우 해당 변수가 함수가 될지 그렇지 않을지를 알기 위해 해석 과정에서 함수를 판단해야하는데, 이 과정에서 성능 저하가 발생할 수 있다. 그리고 다른 경우와 달리 함수 선언문만이 온전하게 함수로써 무결하게 인식될 수 있다. 다른 경우는 해석의 여지가 다양해질 수 있기 때문에 함수 선언문만 미리 해석하는 것이 효과적이다.
+
+#### 4. 중첩 함수에서 전역 객체를 참조하는 this에 관한 혼란
+  - [자바스크립트를 정의하는 3가지 방법](http://steadypost.net/post/lecture/id/13/)을 참고하다가 찾아온 혼란이다.
+  - 아래의 예제를 통해서 _생성자 패턴으로 객체처럼 사용하는 함수의 경우(클래스 흉내내기)_ 중첩된 함수 속의 this가 어떻게 다른 값을 참조하는지 탐구해보았다.
+  ```javascript
+  function AppleDevice_1 (type) {
+      this.type = type;
+      this.color = "Silver";
+      this.getInfo = function() { //메소드로서의 함수
+          return this.color + '/ ' + this.type + '/ AppleDevice';
+          //아직 실행되지 않은 상태이기 때문에 this는 어떤 컨텍스트도 참조하지 않은 상태
+          //하지만 인스턴스로서 호출되면 메소드로서 사용되기 때문에 그 인스턴스 내부에 있는 값을 this값으로 참조한다.
+      };
+  }
+
+  function AppleDevice_2 (type) {
+      function info () { //함수로서의 함수
+          return this.color + '/ ' + this.type + '/ AppleDevice';
+      };
+      this.getInfo = info();
+      //함수를 실행 한 후 결과값을 반환, 이때 info() 함수는 "함수 내부에서 실행된 함수"이기 때문에 this는 전역 객체를 참조한다.
+  }
+
+  var type = "iPad 9.7";
+  var color = "Champagne Gold";
+  //브라우저에서 실행할 경우 window객체에 포함되는 변수
+
+  var apple_1 = new AppleDevice_1('MacBookPro RetinaDisplay');
+  var apple_2 = new AppleDevice_2();
+  var apple_3 = {
+    type: "iPhone SE",
+    color: "Space Grey"
+  };
+
+  console.log(apple_1.getInfo()); //메소드로서의 getInfo(), 'Silver/ MacBookPro RetinaDisplay/ AppleDevice'를 기록한다.
+  console.log(apple_2.getInfo); //값으로서의 getInfo, 'iPad 9.7/ Champagne Gold/ AppleDevice'를 기록한다. (브라우저에서 실행할 경우)
+  console.log(apple_1.getInfo.call(apple_3)); //메소드로서의 getInfo(), 'Space Grey/ iPhone SE/ AppleDevice'를 기록한다.
+  ```
+  - **결론: 함수로서의 함수, 메소드로서의 함수를 구별할 수 있어야한다. (호출되는 시기를 유의할 것)**

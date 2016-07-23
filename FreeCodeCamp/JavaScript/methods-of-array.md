@@ -44,3 +44,45 @@ array.sort(function(a, b) {
   return b - a; //음수값이 반환되면서, 숫자를 역순으로 정렬하도록 한다.
 });
 ```
+
+
+## 5. 예제 05 - `reverse()` 메소드를 이용한 배열의 역정렬
+* `reverse()` 메소드는 배열을 역순으로 정렬하여 반환한다. (`sort()`와 반대)
+```javascript
+var array = [1,2,3,4,5,6,7];
+var newArray = [];
+
+newArray = array.reverse(); //[7,6,5,4,3,2,1]이 반환되어 저장된다.
+```
+
+
+## 6. 예제 06 - `concat()` 메소드를 이용해 두개의 배열 합치기
+* `concat()` 메소드는 매개변수로 받는 배열과 인스턴스 배열을 합쳐서 반환한다.
+```javascript
+var oldArray = [1,2,3];
+var newArray = [];
+
+var concatMe = [4,5,6];
+
+newArray = oldArray.concat(concatMe); //[1,2,3,4,5,6]이 반환되어 저장된다.
+```
+
+
+## 7. 예제 07 - `split()` 메소드를 이용한 배열의 해체 혹은 분해
+* `split()` 메소드는 매개변수로 받는 문자열을 기준으로 배열을 나누어 반환한다.
+```javascript
+var string = "Split me into an array";
+var array = [];
+
+array = string.split(' '); //띄어쓰기를 기점으로 나눈다. 음절별로 나뉘어 반환된다. ['Split', 'me', 'into', 'an', 'array']가 반환된다.
+```
+
+
+## 8. 예제 08 - `join()` 메소드를 이용한 배열의 요소 합치기
+* `join()` 메소드는 매개변수로 받는 문자열을 구분자로 하여 배열의 요소들을 합쳐 반환한다.
+```javascript
+var joinMe = ["Split","me","into","an","array"];
+var joinedString = '';
+
+joinedString = joinMe.join(' '); //띄어쓰기를 구분자로 배열의 모든 요소를 합친다. ["Split me into an array"]가 반환되어 저장된다.
+```

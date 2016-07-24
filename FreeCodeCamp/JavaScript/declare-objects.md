@@ -1,4 +1,4 @@
-**Declare Objects(객체의 선언)**
+#Declare Objects(객체의 선언)
 
 ## 1. 예제 01
 변수로서의 객체 선언

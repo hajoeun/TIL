@@ -8,6 +8,10 @@
 - [declare-objects.md](http://til.wiki.dev/FreeCodeCamp/JavaScript/declare-objects)
 - [methods-of-array.md](http://til.wiki.dev/FreeCodeCamp/JavaScript/methods-of-array)
 
+### b. BasicAlgorithm
+- [reverse-a-string.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/reverse-a-string)
+
+
 ## 2. JavaScript
 - [this-keyword.md](http://til.wiki.dev/JavaScript/this-keyword)
 - [scope-and-closure.md](http://til.wiki.dev/JavaScript/scope-and-closure)
@@ -19,9 +23,14 @@
 - [tips.md](http://til.wiki.dev/JavaScript/tips)
 - [operators.md](http://til.wiki.dev/JavaScript/operators)
 - [Function.md](http://til.wiki.dev/JavaScript/Function())
+- [object](http://til.wiki.dev/JavaScript/object)
 
 
 ## 3. macOS
 
 ###  a. Finder
 - [hidden-files-hide-and-show.md](http://til.wiki.dev/macOS/Finder/hidden-files-hide-and-show)
+
+
+## 4. HTML
+- [entities](http://til.wiki.dev/HTML/entities.md)

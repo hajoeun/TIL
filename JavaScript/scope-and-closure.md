@@ -78,6 +78,19 @@ console.log(countUpFromZero()); //2가 기록된다.
 console.log(countUpFromZero()); //3이 기록된다.
 ```
 
+- 특정 생성자에 의해 생성된 클로저 인스턴스는 만드는 함수의 매개변수 그 자체에 대한 접근 권한을 갖는다. **(복사본이 아님!!)**
+```javascript
+var quo = function(status) {
+  return {
+    get_status: function() {
+      return status;
+    }
+  };
+};
+
+var myQuo = new quo("amazed");
+console.log(myQuo.get_status()); //여기서 get_status()는 status 매개변수의 복사본이 아닌 그 자체에 접근할 권한을 갖는다.
+```
 
 ## 4. [let 키워드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/let#Block_scope_with_let)
 - ECMAScript2015(ES6)에서는 var대신 let 키워드를 이용하여 블록 스코프를 지원한다.

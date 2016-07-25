@@ -3,7 +3,7 @@
 
 ### Entities Table
 | Result | Description | Entity Name | Entity Number |
-| --- | --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- |
 |  | non-breaking space | &nbsp; | &#160; |
 | < | less than | &lt; | &#60; |
 | > | greater than | &gt; | &#62; |
@@ -11,4 +11,3 @@
 | ¢ | cent | &cent; | &#162; |
 | £ | pound | &pound; | &#163; |
 | ¥ | yen | &yen; | &#165; |
-| --- | --- | --- | --- | --- |

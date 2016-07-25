@@ -20,7 +20,7 @@
 - `var`은 "Variables"를 의미한다.
 
 
-## 5. 효과적인 배열 탐색 반복문(loop statements)
+## 5. Trick - 효과적인 배열 탐색 반복문(loop statements)
 - 일반적인 배열의 탐색은 length 속성을 이용하여 반복문의 종료 조건을 설정한다. 하지만 이같은 방법은 루프를 반복할 때마다 length 속성을 찾아보게되므로 약간 비효율적이다.
 - 배열에서 정의되지 않은 구간에서 'undefined'값을 가지는 것을 응용하여 효과적인 배열 탐색이 가능하다.
 ```javascript
@@ -40,7 +40,7 @@ for (var i in a) {
 ```
 
 
-## 6. push()의 대안
+## 6. Trick - push()의 대안
 - Array 객체 인스턴스의 length 속성은 항상 가장 큰 인덱스의 하나 더 큰 값을 가진다. 때문에 length 값은 인덱스로서 배열의 끝을 가리키는 값이 된다. 이 특징을 응용해 push() 메소드와 같은 역할을 하도록 할 수 있다.
 ```javascript
 a[a.length] = '5'; //배열 끝의 빈 공간에 '5'를 할당한다.
@@ -51,3 +51,61 @@ a[a.length] = '5'; //배열 끝의 빈 공간에 '5'를 할당한다.
 - 자바와 같이 클래스가 있는 언어에서는 언제나 하나의 클래스 인스턴스만을 가질 수 있는 객체를 '싱글튼'이라고 부른다. 싱글튼은 동일한 클래스의 객체를 하나 이외에 생성할 수 없다.
 - 당초 자바스크립트는 클래스의 개념이 없다. 때문에 자바스크립트의 모든 객체는 싱글튼이다. 모든 객체가 싱글튼이기 때문에 클래스가 없기도 하다.
 - 결국 자바스크립트에서 클래스와 같은 역할을 할 수 있는건 [함수로 정의하는 방법](http://steadypost.net/post/lecture/id/13/) 뿐이다.
+
+
+## 8. Trick - 기본 타입에 기능 추가
+- `method`라는 메소드를 prototype에 정의해서 메소드를 추가할 때 보다 단순한 코드로 추가가 가능하도록 한다.
+```javascript
+//단순한 코드로 함수를 추가하기 위한 메소드 만들기
+Function.prototype.method = function (name, func) {
+  if(!this.prototype[name]) { //같은 이름의 메소드가 없을 경우에만 추가하는 방어적인 방법
+    this.prototype[name] = func;
+    return this;
+  } else {
+    throw {
+      name: "DuplicationError",
+      message: "Method name is duplicated"
+    };
+  }
+}
+
+//숫자형에서 정수 부분만 추출하는 메소드 추가
+Number.method('integer', function() {
+  return Math[this < 0 ? 'ceil' : 'floor'](this); //값에 따라 Math.ceil(this) 혹은 Math.floor(this) 함수가 반환된다.
+});
+console.log((-10/3).integer()); //'-3'이 기록된다.
+
+
+//문자열 양 끝에 있는 빈 칸을 지우는 메소드 추가
+String.method('trim', function() {
+  return this.replace(/^\s+|\s+$/g, '');
+});
+console.log("    neat    ".trim()); //'neat'가 기록된다.
+```
+
+
+## 9. Trick - 재귀 함수를 활용한 DOM 트리 구조 다루기 [???]
+- 자기 자신을 호출하는 재귀 함수의 특징을 응용하면 트리 구조를 효과적으로 다룰 수 있다.
+```javascript
+var walk_the_DOM = function walk(node, func) {
+  func(node);
+  node = node.firstChild;
+  while(node) {
+    walk(node, func);
+    node = node.nextSibling;
+  }
+};
+
+var getElementsByAttribute = function (att, value) {
+  var results = [];
+
+  walk_the_DOM(document.body, function (node) {
+    var actual = node.nodeType === 1 && node.getAttribute(att);
+    if (typeof actual === 'string' && (actual === value || typeof value !== 'string')) {
+      results.push(node);
+    }
+  });
+
+  return results;
+};
+```

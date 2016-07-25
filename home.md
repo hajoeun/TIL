@@ -22,7 +22,7 @@
 - [Boolean().md](http://til.wiki.dev/JavaScript/Boolean())
 - [tips.md](http://til.wiki.dev/JavaScript/tips)
 - [operators.md](http://til.wiki.dev/JavaScript/operators)
-- [Function.md](http://til.wiki.dev/JavaScript/Function())
+- [Function().md](http://til.wiki.dev/JavaScript/Function())
 - [object](http://til.wiki.dev/JavaScript/object)
 
 
@@ -33,4 +33,4 @@
 
 
 ## 4. HTML
-- [entities](http://til.wiki.dev/HTML/entities.md)
+- [entities](http://til.wiki.dev/HTML/entities)

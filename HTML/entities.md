@@ -1,7 +1,8 @@
-#Entities
+# Entities
 - HTML의 특정 문자들이 예약되어 있기 때문에 표기의 혼란을 막기 위해 사용하는 키워드들
 
 ### Entities Table
+
 | Result | Description | Entity Name | Entity Number |
 | :--- | :--- | :--- | :--- |
 |  | non-breaking space | &nbsp; | &#160; |

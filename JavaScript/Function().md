@@ -243,6 +243,101 @@ console.log('&lt;&quot;&gt;'.deentityify()); // <"> 가 출력된다.
 ```
 
 
+## 13. 연속 호출(cascade)
+- 만약에 메소드들이 `undefined` 대신에 `this`를 반환한다면 연속 호출이 가능하다.
+- 연속 호출을 사용하면 같은 객체에 대해 문장 하나로 연속되는 많은 메소드를 호출할 수 있다.
+```javascript
+function palindrome(str) {
+  str = str.replace(/[^a-z0-9]/gi,'');
+  var temp = str.split('').reverse().join(''); //이런 식으로 연속 호출이 가능하다.
+
+  temp = temp.toLowerCase();
+  str = str.toLowerCase();
+
+  if(temp === str) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+palindrome("eye");
+```
+
+
+## 14. 커링(curry) [참고](http://anster.tistory.com/144)
+- 함수와 인수를 결합하여 새로운 함수를 만들 수 있게 하는 기법, 커링
+```javascript
+//자바스크립트에 없는 커링 메소드를 직접 정의하는 코드
+Function.prototype.curry = function(){  
+  var slice = Array.prototype.slice,
+      args = slice.apply(arguments),
+      that = this;
+  return function() {
+    return that.apply(null, args.concat(slice.apply(arguments)));
+  };
+};
+
+//커링용으로 사용할 함수
+var sum = function(a, b) {
+  return a + b;
+}
+
+var sum12 = sum.curry(12); //'sum12'라는 커링된 함수를 만들어준다.
+console.log(sum12(3)); //'15'가 기록된다.
+```
+
+
+## 15. 메모이제이션(memoization)
+- 함수는 불필요한 작업을 피하기 위해서 이전에 연산한 결과를 저장하고 있는 객체를 사용할 수 있다.
+- 피보나치 수열과 같은 연산에 메모이제이션을 활용하면 함수를 호출하는 회수를 현저하게 줄일 수 있다.
+- (10까지의 연산 중에 함수 호출 회수 - 일반적 재귀함수: 453번 / 메모이제이션 활용 재귀함수: 29번)
+```javascript
+var fibonacci = function () { //클로저를 만들기 위한 함수
+  var memo = [0, 1]; //연산의 결과를 저장하는 공간
+  //실제 연산하는 함수
+  var fib = function(n) {
+    var result = memo[n];
+    if (typeof result !== 'number') {
+      result = fib(n - 1) + fib(n - 2);
+      memo[n] = result;
+    }
+    return result;
+  };
+  return fib;
+}( );
+
+for (var i = 0; i <= 10; i++) {
+  console.log(i + ': ' + fibonacci(i));
+}
+```
+
+- 이러한 메모이제이션 작업은 메모이제이션 함수를 만들 수 있게 도와주는 함수를 만들어서 일반화할 수 있다.
+```javascript
+var memoizer = function (memo, fundamental) { //일반화하는 함수
+  //'memo'는 저장할 배열을 의미하고, 'fundamental'은 메모이제이션을 수행할 함수를 의미한다.
+
+  var shell = function (n) {
+    var result = memo[n];
+    if (typeof result !== 'number') {
+      result = fundamental(shell, n);
+      memo[n] = result;
+    }
+    return result;
+  };
+  return shell;
+};
+
+var fibonacci = memoizer([0,1], function (shell, n) {
+  return shell(n - 1) + shell(n - 2);
+});
+
+for (var i = 0; i <= 10; i++) {
+  console.log(i + ': ' + fibonacci(i));
+}
+```
+
+
 ## Q&A. 여러가지 의문들
 #### 1. 왜 함수는 이토록 다양한 방법으로 선언되고 다양한 방법으로 호출되는가?
   - 각각의 쓰임이 다르기 때문이다. 우선 __함수 생성자의 경우__ 문자열로 만들 수 있는 실행부가 가지는 이 점을 가지는 경우가 존재한다. 조건에 따라 함수 내부 코드 자체가 변해야하는 경우 `+`를 이용하여 다른 실행부를 만들 수 있기 때문이다. 리터럴 표기법 중 __함수 선언문의 경우__ 함수 호이스팅이 가능한 유일한 선언법이라는 점에서 필요성을 가진다. 반면 __함수 표현식의 경우__ 자기 호출 표현식이 가능하고 경우에 따라 함수가 아닌 다른 변수를 저장할 수 있도록 해주기에 필요성을 가진다.

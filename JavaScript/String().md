@@ -34,7 +34,7 @@ console.log(stringLiteral, typeof stringLiteral); //'foo' 'string'이 기록된�
   - lastIndexOf()
   - localeCompare()
   - match()
-  - replace()
+  - [replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Specifying_a_function_as_a_parameter)
   - search()
   - slice()
   - split()

@@ -200,6 +200,49 @@ try_it();
 ```
 
 
+## 12. 모듈(module)
+- 모듈은 내부의 상태나 구현 내용을 숨기고 인터페이스만 제공하는 함수 혹은 객체를 의미한다.
+- 함수와 클로저를 사용해서 모듈을 만들 수 있다. 모듈을 만들기 위해서 함수를 사용하면 전역변수 사용을 거의 대부분 제거할 수 있다.
+```javascript
+Function.prototype.method = function (name, func) {
+  if(!this.prototype[name]) { //같은 이름의 메소드가 없을 경우에만 추가하는 방어적인 방법
+    this.prototype[name] = func;
+    return this;
+  } else {
+    throw {
+      name: "DuplicationError",
+      message: "Method name is duplicated"
+    };
+  }
+}
+
+String.method('deentityify', function() {
+  //entity table, 엔티티의 이름을 문자에 대응시킨다.
+  var entity = {
+    quot: '"',
+    lt: '<',
+    gt: '>'
+  };
+
+  //deentityify 메소드를 반환한다.
+  return function() {
+
+    //실제 deentityify 메소드 부분
+    //replace() 메소드의 매개변수가 동작하는 원리를 이해하면 알 수 있는 아래의 코드
+    //function(a,b)에서 a는 정규표현식이 찾은 결과물을 의미하고, b는 정규표현식 내에서 괄호'()'로 묶인 부분에 해당하는 문자열을 의미한다.
+    return this.replace(/&([^&;]+);/g,
+      function (a,b) {
+        var r = entity[b];
+        return typeof r === 'string' ? r : a;
+      }
+    );
+  };
+}());
+
+console.log('&lt;&quot;&gt;'.deentityify()); // <"> 가 출력된다.
+```
+
+
 ## Q&A. 여러가지 의문들
 #### 1. 왜 함수는 이토록 다양한 방법으로 선언되고 다양한 방법으로 호출되는가?
   - 각각의 쓰임이 다르기 때문이다. 우선 __함수 생성자의 경우__ 문자열로 만들 수 있는 실행부가 가지는 이 점을 가지는 경우가 존재한다. 조건에 따라 함수 내부 코드 자체가 변해야하는 경우 `+`를 이용하여 다른 실행부를 만들 수 있기 때문이다. 리터럴 표기법 중 __함수 선언문의 경우__ 함수 호이스팅이 가능한 유일한 선언법이라는 점에서 필요성을 가진다. 반면 __함수 표현식의 경우__ 자기 호출 표현식이 가능하고 경우에 따라 함수가 아닌 다른 변수를 저장할 수 있도록 해주기에 필요성을 가진다.

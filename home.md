@@ -10,6 +10,7 @@
 
 ### b. BasicAlgorithm
 - [reverse-a-string.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/reverse-a-string)
+- [find-the-longest-word-in-a-string.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/find-the-longest-word-in-a-string)
 
 
 ## 2. JavaScript
@@ -24,6 +25,7 @@
 - [operators.md](http://til.wiki.dev/JavaScript/operators)
 - [Function().md](http://til.wiki.dev/JavaScript/Function())
 - [object.md](http://til.wiki.dev/JavaScript/object)
+- [inheritance.md](http://til.wiki.dev/JavaScript/inheritance)
 
 
 ## 3. macOS

@@ -6,7 +6,7 @@
 - 객체 하나에 있는 속성들을 다른 객체에 상속하게 해주는 '프로토타입(Prototype)'이라는 특성을 활용하면 객체를 초기화는 시간과 메모리 사용을 줄일 수 있다.
 
 
-## 1. 객체 리터럴
+## 1. 객체 리터럴(객체 초기자)
 - 새로운 객체를 생성할 때 사용하는 편리한 표기법
 ```javascript
 var emptyObject = {};
@@ -21,7 +21,7 @@ var stooge = {
 ## 2. 속성값 읽기와 갱신
 - 대괄호 표기법과 점 표기법
 ```javascript
-stooge["first-name"] //"Joeun"
+stooge["first-name"] //"Joeun" //대괄호 표기법을 이용하면 '연관 배열(associative array)'을 흉내내기 좋다.
 flight.departure.IAIA //"SYD"
 
 stooge["second-name"] = "Ha";

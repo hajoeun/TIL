@@ -11,8 +11,8 @@ var addNumbersA = new Function('num1', 'num2', 'return num1 + num2');
 console.log(addNumbersA(2,4));
 
 //리터럴 방식, 이 방식이 더 많이 사용된다.
-var addNumbersB = function(num1, num2) {return num1 + num2;}; //함수 표현식
-function addNumbersC(num1, num2) {return num1 + num2;}; //함수 선언문
+var addNumbersB = function(num1, num2) {return num1 + num2;}; //함수 표현식 (함수 리터럴)
+function addNumbersC(num1, num2) {return num1 + num2;}; //함수 선언문 (함수 정의)
 console.log(addNumbersB(2,5), addNumbersC(4,4));
 ```
 

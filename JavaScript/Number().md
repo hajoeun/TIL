@@ -1,5 +1,7 @@
 #Number()
 
+- 자바스크립트에서 모든 숫자는 실수로 표현된다. 정수와 실수를 구분하지 않는다.
+
 ## 1. Number() 객체의 사용
 - Number() 생성자 함수는 숫자 객체와 숫자 원시값을 만들 때 사용한다.
 ```javascript
@@ -32,5 +34,5 @@ console.log(numberLiteral, typeof numberLiteral); //'1' 'number'가 기록된다
   - toFixed()
   - toLocaleString()
   - toPrecision()
-  - toString()
+  - toString() 문자열로 변환한다. 괄호 안에 넣는 숫자에 따라 진법을 달리할 수 있다. (예: `number.toString(2)`는 2진수로 number를 표현한다.)
   - valueOf()

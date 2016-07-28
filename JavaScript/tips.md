@@ -116,3 +116,42 @@ var getElementsByAttribute = function (att, value) {
 ```javascript
 var args = Array.prototype.slice.apply(arguments);
 ```
+
+
+## 11. 대소문자 구분
+- 자바스크립트는 대소문자를 구문하는 언어다. 반면 HTML은 대소문자를 구별하지 않는다.
+- 많은 수의 자바스크립트 객체와 속성이 HTML의 태그나 어트리뷰트와 이름이 동일하다. 혼란을 줄 수 있는 부분이지만 자바스크립트에서는 이러한 객체 및 속성들을 대부분을 소문자로 사용해야한다. (onClick(HTML에선 가능) -> onclick(자바스크립트에선 소문자만 가능))
+
+
+## 12. 숫자를 문자열로 변환하기
+- 단지 빈 문자열을 숫자에 더하기만 하면 된다. `var n_as_string = 100 + "";`
+- 혹은 명시적으로 표현하기 위해 `String()`함수를 사용한다. `var string_value = String(100);`
+- 혹은 `toString()`메소드를 사용한다. `var string_value = number.toString();`
+
+
+## 13. 문자열을 숫자로 변환하기
+- 단지 문자열에서 0을 빼면 된다. (더하면 문자열 이어붙이기가 된다.) `var number = string_value - 0;`
+- 혹은 명시적으로 표현하기 위해 `Number()`함수를 사용한다. `var number = Number(string_value);`
+- 혹은 더 융통성 있는 방법으로 `parseInt()`, `parseFloat()`를 사용하는 방법이 있다.
+```javascript
+parseInt("3 blind mice"); //3을 반환한다.
+parseFloat("3.14 meters"); //3.14를 반환한다.
+parseInt("12.13"); //12를 반환한다.
+parseFloat("0xff"); //255를 반환한다. 문자열이 '0x'로 시작하면 문자열을 16진수로 인식한다.
+parseInt("eleven"); //NaN을 반환한다. //문자열을 숫자로 변환하지 못하는 경우
+```
+
+
+## 14. 람다 함수(lambda function)
+- 이름 없는 함수를 프로그램 내에 리터럴 형태로 포함시킬 수 있게 한 최초의 언어인 Lisp 프로그램 언어를 기리는 의미에서 함수 표현식(함수 리터럴)로 정의된 함수를 '람다 함수'라고 부른다.
+```javascript
+var addNumbers = function(num1, num2) {return num1 + num2;}; //함수 표현식 (함수 리터럴)
+```
+
+
+## 15. Date 객체
+- `Date()` 생성자로 날짜를 생성할 때, 달을 나타내는 값은 0을 기반으로 한다. 즉 0은 1월이다.
+```javascript
+var xmas = new Date(2014, 11, 25); // 11은 12월을 의미한다.
+//'Thu Dec 25 2014 00:00:00 GMT+0900 (KST)'을 반환한다.
+```

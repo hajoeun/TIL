@@ -26,6 +26,7 @@
 - [Function().md](http://til.wiki.dev/JavaScript/Function())
 - [object.md](http://til.wiki.dev/JavaScript/object)
 - [inheritance.md](http://til.wiki.dev/JavaScript/inheritance)
+- [variable.md](http://til.wiki.dev/JavaScript/variable)
 
 
 ## 3. macOS

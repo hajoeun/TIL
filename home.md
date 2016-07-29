@@ -1,7 +1,7 @@
 # Today I Learned
 
 
-## 1. FreeCodeCamp
+## 1. [FreeCodeCamp](https://www.freecodecamp.com/)
 
 ###  a. JavaScript
 - [regular-expression.md](http://til.wiki.dev/FreeCodeCamp/JavaScript/regular-expression)
@@ -27,6 +27,7 @@
 - [object.md](http://til.wiki.dev/JavaScript/object)
 - [inheritance.md](http://til.wiki.dev/JavaScript/inheritance)
 - [variable.md](http://til.wiki.dev/JavaScript/variable)
+- [statements.md](http://til.wiki.dev/JavaScript/statements)
 
 
 ## 3. macOS

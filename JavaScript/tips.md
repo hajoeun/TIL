@@ -206,3 +206,25 @@ console.log(arr_2); //[1,2,3]이 기록된다.
 console.log(1 + 2 + " blind mice"); // "3 blind mice"
 console.log("blind mice " + 1 + 2); // "blind mice 12"
 ```
+
+
+## 18. 프로퍼티(속성) 존재 확인하기
+- `in` 연산자를 사용하면 프로퍼티의 존재 여부를 확인할 수 있다.
+```javascript
+if ( "x" in my_object) console.log(my_object.x);
+if (my_object.x !== undefined) console.log(my_object.x); //두 문장은 같은 역할을 한다.
+```
+
+
+## 19. 함수 리터럴에서 함수 이름을 정하는 이유
+- 일반적으로 함수 리터럴에서는 익명 함수를 변수에 할당한다. `var add = function(a, b) {return a + b;};`
+- 하지만 이때 함수의 이름을 정해줄 수도 있다. `var add = function sum(a, b) {return a + b;};`
+- __이것은 _재귀 함수_를 구현할 때 유용하다.__ `var fib = function f(x) {if (x <= 1) return 1; else return x * f(x-1);};`
+
+
+## 20. 함수의 이름을 정하는 팁
+  1. 함수의 이름은 일반적으로 동사 혹은 동사로 시작하는 구절이다.
+  2. 관습적으로 함수의 이름은 소문자로 시작한다.
+  3. 함수의 이름이 둘 이상의 단어를 포함할 땐 `like_this()`처럼 밑줄 문자를 사용하거나 `likeThis()`처럼 두번째 단어를 대문자로 시작한다.
+    - 내부적인 변수이거나 숨겨진 함수로 사용하려면 밑줄 문자를 사용한다.
+  

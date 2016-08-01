@@ -25,9 +25,9 @@ console.log(addNumbersB(2,5), addNumbersC(4,4));
 
 ## 3. Function 객체 인스턴스의 속성과 메소드
 - **인스턴스 속성**
-  - arguments
+  - arguments 매개변수에 접근할 수 있는 유사 배열 (함수 내부용)
   - constructor
-  - length 매개변수의 개수를 반환한다.
+  - length 매개변수의 개수를 반환한다. (읽기 전용 / 함수 내외부 모두 사용 가능)
 - **인스턴스 메소드**
   - apply()
   - call()
@@ -337,6 +337,34 @@ for (var i = 0; i <= 10; i++) {
   console.log(i + ': ' + fibonacci(i));
 }
 ```
+
+
+## 16. 객체의 속성을 매개변수로 사용하기
+- 함수를 정의할 때 매개변수의 순서를 인지하기 어렵다. 이를 위해 객체의 속성을 매개변수로 사용하면 된다.
+```javascript
+function arraycopy (fromArray, fromStart, toArray, toStart, arrLength) {
+    // 하나의 배열에서 다른 배열로 특정 길이만큼 복사하는 함수
+}
+function easycopy (args) {
+    // 배열의 인자 값을 쉽게 호출하도록 돕는 함수
+    arraycopy (args.from, args.fromStart || 0, args.to, args.toStart || 0, args.arrLength);
+}
+
+var a = [1,2,3,4];
+var b = new Array(4);
+
+easycopy({from:a, to:b, fromStart: 2, toStart: 1, arrLength: 2}); // 매개변수의 순서와 상관없이 호출이 가능하다
+```
+
+
+## 17. 호출 객체 (Activation Object) [???]
+- 자바스크립트 인터프리터가 함수를 호출하는 과정에서 발생하는 일들
+  1. 유효 범위를 함수가 정의될 당시의 효력을 지니는 유효 범위 체인으로 설정한다.
+  2. 호출 객체로 알려진 새로운 객체를 생성하여 유효 범위 체인의 맨 앞에 추가한다.
+  3. 이 호출 객체는 함수의 Arguments 객체를 가리키는 arguments 프로퍼티로 초기화된다.
+  4. 함수의 이름이 붙은 매개변수들이 호출 객체에 추가되고, 함수 안에서 var 문장으로 선언된 모든 지역 변수가 역시 호출 객체 안에 정의된다.
+  5. 이 호출 객체는 유효 범위 체인의 맨 앞에 있기 때문에 함수의 지역 변수, 매개변수들과 Arguments 객체는 모두 함수 내 유효 범위에 있게 된다.
+
 
 
 ## Q&A. 여러가지 의문들

@@ -227,4 +227,7 @@ if (my_object.x !== undefined) console.log(my_object.x); //두 문장은 같은 
   2. 관습적으로 함수의 이름은 소문자로 시작한다.
   3. 함수의 이름이 둘 이상의 단어를 포함할 땐 `like_this()`처럼 밑줄 문자를 사용하거나 `likeThis()`처럼 두번째 단어를 대문자로 시작한다.
     - 내부적인 변수이거나 숨겨진 함수로 사용하려면 밑줄 문자를 사용한다.
-  
+
+
+## 21. DRY Principle
+- "Don't Repeat Yourself." 코드를 반복하지 말라는 뜻이다. 객체지향, 상속의 개념을 활용해야 함을 뜻한다.

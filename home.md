@@ -28,6 +28,8 @@
 - [inheritance.md](http://til.wiki.dev/JavaScript/inheritance)
 - [variable.md](http://til.wiki.dev/JavaScript/variable)
 - [statements.md](http://til.wiki.dev/JavaScript/statements)
+- [browser-and-javascript.md](http://til.wiki.dev/JavaScript/browser-and-javascript)
+- [document-scripting.md](http://til.wiki.dev/JavaScript/document-scripting)
 
 
 ## 3. macOS

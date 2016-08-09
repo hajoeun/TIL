@@ -11,6 +11,12 @@
 ### b. BasicAlgorithm
 - [reverse-a-string.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/reverse-a-string)
 - [find-the-longest-word-in-a-string.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/find-the-longest-word-in-a-string)
+- [repeat-a-string-repeat-a-string.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/repeat-a-string-repeat-a-string)
+- [chunky-monkey.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/chunky-monkey)
+- [confirm-the-ending.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/confirm-the-ending)
+- [return-largest-numbers-in-arrays.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/return-largest-numbers-in-arrays)
+- [title-case-a-sentence.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/title-case-a-sentence)
+- [truncate-a-string.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/truncate-a-string)
 
 
 ## 2. JavaScript
@@ -30,7 +36,11 @@
 - [statements.md](http://til.wiki.dev/JavaScript/statements)
 - [browser-and-javascript.md](http://til.wiki.dev/JavaScript/browser-and-javascript)
 - [document-scripting.md](http://til.wiki.dev/JavaScript/document-scripting)
-
+- [dictionary-of-methods.md](http://til.wiki.dev/JavaScript/dictionary-of-methods)
+- [cookie-property.md](http://til.wiki.dev/JavaScript/cookie-property)
+- [module-and-namespace.md](http://til.wiki.dev/JavaScript/module-and-namespace)
+- [json.md](http://til.wiki.dev/JavaScript/json)
+- [offline-applications-and-clientside-storage.md](http://til.wiki.dev/JavaScript/offline-applications-and-clientside-storage)
 
 ## 3. macOS
 

@@ -238,3 +238,34 @@ function hasPrototypeProperty(object, name) {
 
 ## 21. DRY Principle
 - "Don't Repeat Yourself." 코드를 반복하지 말라는 뜻이다. 객체지향, 상속의 개념을 활용해야 함을 뜻한다.
+
+
+## 22. switch문을 활용하자
+- 복잡한 if-else문 보다 switch문이 더 빠를 수 있다. 가능성이 높은 순서대로 case를 배치하는게 더 빠르다.
+
+
+## 23. Duff's device
+_from Speed Up Your Site_
+- 루프가 필요한 코드를 빠르게, 루프 해체
+```javascript
+var iterations = Math.floor(values.length / 8);
+var leftover = values.length % 8;
+var i = 0;
+
+if (leftover > 0) {
+    do {
+        process(values[i++]);
+    } while (--leftover > 0);
+}
+
+do {
+    process(values[i++]);
+    process(values[i++]);
+    process(values[i++]);
+    process(values[i++]);
+    process(values[i++]);
+    process(values[i++]);
+    process(values[i++]);
+    process(values[i++]);
+} while (--iterations > 0);
+```

@@ -266,8 +266,8 @@ palindrome("eye");
 ```
 
 
-## 14. 커링(curry) [참고](http://anster.tistory.com/144)
-- 함수와 인수를 결합하여 새로운 함수를 만들 수 있게 하는 기법, 커링
+## 14. 커링(curry) 
+- 함수와 인수를 결합하여 새로운 함수를 만들 수 있게 하는 기법, 커링. [참고 내용](http://anster.tistory.com/144)
 ```javascript
 //자바스크립트에 없는 커링 메소드를 직접 정의하는 코드
 Function.prototype.curry = function(){  

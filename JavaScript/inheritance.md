@@ -85,7 +85,7 @@ console.log(instance2.colors);
 
 ## 4. 조합 상속
 - 프로토타입과 생성자 훔치기 패턴을 조합해 두 패턴의 장점만을 취하는 접근법
-- 프로토타입 체인을 써서 프로토타입에 존재하는 프로퍼티와 메소드를 상속하고 생성자 훔치기 패턴으로 인스턴스 프로퍼티를 상속하는 것
+- 프로토타입 체인을 써서 프로토타입에 존재하는 메소드를 상속하고 생성자 훔치기 패턴으로 인스턴스 프로퍼티를 상속하는 것
 ```javascript
 function SuperType(name) {
   this.name = name;
@@ -97,10 +97,12 @@ SuperType.prototype.sayName = function() {
 };
 
 function SubType(name, age){
-  SuperType.call(this, name);
+  SuperType.call(this, name); // 프로퍼티 상속
 
   this.age = age;
 }
+
+SubType.prototype = new SuperType(); // 메소드 상속
 ```
 - 일반적이고 공유할만한 메소드는 프로토티입 체인으로 선언하고, 매개변수를 전달함으로 프로퍼티를 정의하는데 사용되는 메소드는 생성자 훔치기 패턴으로 정의한다.
 - __자바스크립트에서 가장 많이 사용되는 상속 패턴__이지만 상위 타입 생성자가 항상 두 번 호출된다는 점에서 비효율적인 부분도 있다.

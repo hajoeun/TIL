@@ -3,7 +3,7 @@ _from Professional JavaScript_
 
 
 ## 1. 오프라인 탐지
-- `navigator.onLine` 프로퍼티를 사용해서 인터넷에 연결된 상태인지를 점검할 수 있다. (ture/false 반환)
+- `navigator.onLine` 프로퍼티를 사용해서 인터넷에 연결된 상태인지를 점검할 수 있다. (true/false 반환)
 
 
 ## 2. 애플리케이션 캐시

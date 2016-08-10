@@ -215,6 +215,13 @@ if ( "x" in my_object) console.log(my_object.x);
 if (my_object.x !== undefined) console.log(my_object.x); //두 문장은 같은 역할을 한다.
 ```
 
+- `hasOwnProperty()`와 조합해서 사용하면 프로토타입에 존재하는 프로퍼티인지 확인할 수 있다.
+```javascript
+function hasPrototypeProperty(object, name) {
+    return !object.hasOwnProperty(name) && (name in object);
+}
+```
+
 
 ## 19. 함수 리터럴에서 함수 이름을 정하는 이유
 - 일반적으로 함수 리터럴에서는 익명 함수를 변수에 할당한다. `var add = function(a, b) {return a + b;};`

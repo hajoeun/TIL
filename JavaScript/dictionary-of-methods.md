@@ -19,3 +19,17 @@ Object.isPrototypeOf(o); //false
 o.isPrototypeOf(Object.prototype); //false
 Function.prototype.isPrototypeOf(Object);  //true
 ```
+
+
+## 전역 객체에 포함된 전역 함수
+- 전역 객체와 전역 변수는 다른 개념이다. 전역 객체는 window 객체와 같은 머리 객체(head object)를 의미한다.
+- 자바스크립트에는 미리 정의된 몇 개의 함수 최상위 스코프의 객체(머리 객체)에 포함되어 있다.
+- 다음 네이티브 함수들은 전역 객체의 메소드로써 사용된다.
+#### 1. decodeURI()
+#### 2. decodeURIComponent()
+#### 3. encodeURI()
+#### 4. encodeURIComponent()
+#### 5. eval()
+#### 6. isFinite()
+#### 7. parseFloat()
+#### 8. parseInt()

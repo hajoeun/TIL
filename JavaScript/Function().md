@@ -17,6 +17,9 @@ function addNumbersC(num1, num2) {return num1 + num2;}; //함수 선언문 (함�
 console.log(addNumbersB(2,5), addNumbersC(4,4));
 ```
 
+- Function() 생성자를 사용할 때는 new 키워드가 있으니 없으나 결과가 같다.
+- Function() 생성자를 직접 호출하면 클로저가 생기지 않는다.
+
 
 ## 2. Function() 속성과 메소드
 - **속성**
@@ -336,6 +339,25 @@ var fibonacci = memoizer([0,1], function (shell, n) {
 for (var i = 0; i <= 10; i++) {
   console.log(i + ': ' + fibonacci(i));
 }
+```
+
+- 팩토리얼(Factorial) 함수도 메모이제이션으로 구현 가능하다.
+```javascript
+var factorial = function () {
+    var memo = [1];
+
+    var fac = function(n) {
+        var result = memo[n];
+        if (typeof result === 'undefined') {
+            result = n * fac(n - 1);
+            memo[n] = result;
+        }
+        return result;
+    };
+    return fac;
+}();
+
+console.log(factorial(5)); // 120이 기록된다.
 ```
 
 

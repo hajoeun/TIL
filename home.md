@@ -42,6 +42,7 @@
 - [json.md](http://til.wiki.dev/JavaScript/json)
 - [offline-applications-and-clientside-storage.md](http://til.wiki.dev/JavaScript/offline-applications-and-clientside-storage)
 - [desing-pattern.md](http://til.wiki.dev/JavaScript/design-pattern)
+- [advanced-techniques.md](http://til.wiki.dev/JavaScript/advanced-techniques)
 
 
 ## 3. macOS

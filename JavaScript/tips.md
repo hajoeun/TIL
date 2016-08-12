@@ -274,3 +274,54 @@ do {
     process(values[i++]);
 } while (--iterations > 0);
 ```
+
+
+## 24. 배열 `length` 속성의 특징들
+- 배열에 정수가 아닌 속성을 추가하면 length는 변하지 않는다.
+- 배열의 length 속성은 특수한 성질을 가지고 있기 때문에 정수형으로 받는 속성만 길이로 인식한다.
+```javascript
+var numbers = [1,2,3,4,5,6,7,8,9];
+
+console.log(numbers.length); // '9' 가 기록된다.
+
+numbers.data = function(){
+    console.log("Hello!");
+};
+
+console.log(numbers.length); // '9' 가 기록된다.
+```
+
+- `Object.create` 메소드에 배열을 인자로 받아 만들어진 객체는 배열의 값과 메소드를 상속 받지만 length 속성은 갖지 못한다.
+ 
+ 
+## 25. 다차원 배열 만드는 함수
+_from JavaScript Good Part_
+```javascript
+ Array.matrix = function (m,n,init) {
+     var a, i, j, mat = [];
+     for (i = 0; i < m; i += 1) {
+         a = [];
+         for (j = 0; j < n; j += 1) {
+             a[j] = init;
+         }
+         mat[i] = a;
+     }
+     return mat;
+ };
+ 
+ var myMatrix = Array.matrix(4, 4, 0);
+ 
+ console.log(myMatrix);
+ 
+ Array.identity = function (n) {
+     var i, mat = Array.matrix(n, n, 0);
+     for (i = 0; i < n; i += 1) {
+         mat[i][i] = 1;
+     }
+     return mat;
+ };
+ 
+ myMatrix = Array.identity(4);
+ 
+ console.log(myMatrix);
+ ```

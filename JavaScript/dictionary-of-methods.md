@@ -195,3 +195,50 @@ while ((a = tag.exec(text))) {
 var b = /&.+;/.test('Frank &amp; beans');
 console.log(b); // true 가 기록된다.
 ```
+
+
+## string.charAt(pos)
+- 문자열에서 pos 위치에 있는 문자를 반환하는 메소드
+- pos 값이 0보다 작거나 문자열의 길이값(length)보다 크거나 같으면 빈 문자열을 반환한다.
+```javascript
+var name = "Joeun";
+var initial = name.charAt(0); // 머리 글자는 'J'
+```
+
+
+## string.charCodeAt(pos)
+- 문자열에서 pos 위치에 있는 문자의 코드를 반환하는 메소드
+- pos 값이 0보다 작거나 문자열의 길이값(length)보다 크거나 같으면 NaN을 반환한다.
+```javascript
+var name = "Joeun";
+var initial = name.charCodeAt(0); // 머리 글자 코드는 74
+```
+
+
+## string.concat(string...)
+- 자신과 인수로 넘어온 문자열들을 연결하여 새로운 문자열을 만드는 메소드
+```javascript
+var s = 'C'.concat('a', 't'); // s는 'Cat'
+```
+
+
+## string.indexOf(searchString, position)
+- searchString을 검색하는 메소드 (찾으면 문자의 위치를 반환, 찾지 못하면 -1을 반환)
+- 옵션인 position 매개변수는 검색 시작 위치를 지정한다.
+```javascript
+var text = "Mississippi";
+var p = text.indexOf('ss'); // p는 2
+p = text.indexOf('ss', 3); // p는 5
+p = text.indexOf('ss', 6); // p는 -1
+```
+
+
+## string.lastIndexOf(searchString, position)
+- 문자열의 뒤에서부터 searchString을 검색하는 메소드 찾으면 문자의 위치를 반환, 찾지 못하면 -1을 반환)
+- 옵션인 position 매개변수는 검색 시작 위치를 지정한다.
+```javascript
+var text = "Mississippi";
+var p = text.lastIndexOf('ss'); // p는 5
+p = text.lastIndexOf('ss', 3); // p는 2
+p = text.lastIndexOf('ss', 6); // p는 5
+```

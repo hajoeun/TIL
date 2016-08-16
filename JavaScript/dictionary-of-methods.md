@@ -26,7 +26,7 @@ Function.prototype.isPrototypeOf(Object);  //true
 - 자바스크립트에는 미리 정의된 몇 개의 함수 최상위 스코프의 객체(머리 객체)에 포함되어 있다.
 - 다음 네이티브 함수들은 전역 객체의 메소드로써 사용된다.
     - decodeURI()
-    - decodeURIComponent() 
+    - decodeURIComponent()
     - encodeURI()
     - encodeURIComponent()
     - eval()
@@ -173,8 +173,9 @@ console.log(typeof pi.toString()); // string
 - regexp를 string에 적용해서 일치하는 경우 배열을 반환하는 메소드 (정규표현식 메소드들 중에서 가장 강력하지만 가장 느린 메소드)
 - 배열의 첫번째 요소는 regexp에 일치하는 문자열을 포함하고, 두번째 요소부터는 그룹 1에 캡쳐된 텍스트, 세번째 요소는 그룹 2에 캡쳐된 텍스트와 같은 식으로 배열로 할당되어 반환된다.
 - 단, 정규표현식 객체(regexp)가 g 플래그를 가진 경우에는 검색의 시작점이 첫번째 요소부터가 아니라 regexp.lastIndex 값의 위치부터 시작한다. 일치하는 것을 찾으면 regexp.lastIndex 값은 일치하는 부분 다음에 나오는 첫 글자의 위치로 설정된다. 일치하는 것을 찾지 못하면 값은 0으로 재설정된다.
-- 이러한 원리를 기반으로 반복적으로 exec를 호출하면서 문자열에 포함된 패턴과 일치하는 부분을 찾아낸다. 
+- 이러한 원리를 기반으로 반복적으로 exec를 호출하면서 문자열에 포함된 패턴과 일치하는 부분을 찾아낸다.
     - 주의사항: 루프를 다 돌기 전에 일찍 빠져나가는 경우 다시 루프를 돌아 전부 찾기 위해서 regexp.lastIndex 값을 0으로 설정해야 한다.
+
 ```javascript
 var text = '<html><body bgcolor=linen><p>This is <b>bold</b>!</p></body></html>';
 var tag = /[^<>]+|<(\/?)([A-Aa-z]+)([^<>]*)>/g;
@@ -258,7 +259,8 @@ m.sort(function(a, b) {
 ## string.match(regexp)
 - 정규 표현식과 일치하는 부분을 문자열에서 찾는 메소드
 - 정규 표현식에서 g 플래그를 설정하면 일치하는 모든 부분을 배열로 반환한다. (그렇지 않으면 `regexp.exec(string)` 호출과 같은 반환값을 가진다.)
-```
+
+```javascript
 var text = '<html><body bgcolor=linen><p>' +
     'This is <b>bold<\/b>!<\/p><\/body><\/html>';
 var tags = /[^<>]+|<(\/?)([A-Za-z]+)([^<>]*)>/g;
@@ -276,13 +278,15 @@ for (i = 0; i < a.length; i += 1) {
 - searchValue는 문자열이거나 정규 표현식 객체 (문자열이면 첫번째로 찾은 부분만 교체, 정규 표현식이고 g 플래그가 설정되면 모든 부분이 교체)
 - replaceValue는 문자열이거나 함수 (함수면 일치할 때마다 해당 함수가 호출되고 함수에서 반환하는 문자열로 교체가 일어난다.)
     - 문자열일 경우 문자 '$'가 가지는 의미
-    | 달러 시퀀스 | 교체되는 내용 |
-    | :--- | :--- |
-    | $$ | $ |
-    | $& | 일치하는 텍스트 |
-    | $숫자 | 해당 숫자의 캡처 그룹 텍스트 |
-    | $` | 일치하는 부분 앞에 있는 텍스트 |
-    | $' | 일치하는 부분 뒤에 있는 텍스트 |
+
+| 달러 시퀀스 | 교체되는 내용 |
+| :--- | :--- |
+| $$ | $ |
+| $& | 일치하는 텍스트 |
+| $숫자 | 해당 숫자의 캡처 그룹 텍스트 |
+| $` | 일치하는 부분 앞에 있는 텍스트 |
+| $' | 일치하는 부분 뒤에 있는 텍스트 |
+
 ```javascript
 var oldAreaCode = /\((\d{3})\)/g;
 var p = '(555)666-1212'.replace(oldAreaCode, '$1-'); //p는 555-666-1212 (첫번째 캡처 그룹에 의해 채택된 '555'가 '$1' 자리로 대체된다.)
@@ -301,7 +305,7 @@ var pos = text.search(/["']/); // pos는 18
 ## string.slice(start, end)
 - 문자열의 일부분을 복사하여 새로운 문자열을 만드는 메소드
 - start 매개변수가 음수이면 이 값에 `.length` 값을 더한다. (이 특징을 활용해서 끝에서부터 인덱스 값을 지정할 수 있다.)
-- 옵션인 end 매개변수의 기본값은 마지막 문자의 위치 +1(`.length`)이다. 
+- 옵션인 end 매개변수의 기본값은 마지막 문자의 위치 +1(`.length`)이다.
 ```javascript
 var text = 'and in it he says "Any damn fool could';
 var p = text.slice(-5); // p는 'could'
@@ -337,4 +341,6 @@ var p = text.substring(-5); // 'and in it he says "Any damn fool could' 전체 �
 
 ## String.fromCharCode(char...)
 - 인수로 넘어온 숫자값들을 문자열로 변환하여 반환하는 메소드
-`var a = String.fromCharCode(67, 97, 116); //a는 Cat`
+```javascript
+var a = String.fromCharCode(67, 97, 116); //a는 Cat
+```

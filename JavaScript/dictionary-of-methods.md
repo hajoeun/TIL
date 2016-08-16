@@ -242,3 +242,99 @@ var p = text.lastIndexOf('ss'); // p는 5
 p = text.lastIndexOf('ss', 3); // p는 2
 p = text.lastIndexOf('ss', 6); // p는 5
 ```
+
+
+## string.localeCompare(that)
+- 문자열을 매개변수 that 문자열과 비교하는 메소드
+- 문자열의 비교 기준은 해당 환경의 로케일 정보에 따라 달라진다.
+```javascript
+var m = ['AAA', 'A', 'aa', 'a', 'Aa', 'aaa'];
+m.sort(function(a, b) {
+    return a.localeCompare(b);
+});
+```
+
+
+## string.match(regexp)
+- 정규 표현식과 일치하는 부분을 문자열에서 찾는 메소드
+- 정규 표현식에서 g 플래그를 설정하면 일치하는 모든 부분을 배열로 반환한다. (그렇지 않으면 `regexp.exec(string)` 호출과 같은 반환값을 가진다.)
+```
+var text = '<html><body bgcolor=linen><p>' +
+    'This is <b>bold<\/b>!<\/p><\/body><\/html>';
+var tags = /[^<>]+|<(\/?)([A-Za-z]+)([^<>]*)>/g;
+var a, i;
+
+a = text.match(tags);
+for (i = 0; i < a.length; i += 1) {
+    console.log('[' + i + '] ' + a[i]);
+}
+```
+
+
+## string.replace(searchValue, replaceValue)
+- 문자열을 대상으로 검색 및 대체 작업을 실행하여 새로운 문자열을 생성하는 메소드
+- searchValue는 문자열이거나 정규 표현식 객체 (문자열이면 첫번째로 찾은 부분만 교체, 정규 표현식이고 g 플래그가 설정되면 모든 부분이 교체)
+- replaceValue는 문자열이거나 함수 (함수면 일치할 때마다 해당 함수가 호출되고 함수에서 반환하는 문자열로 교체가 일어난다.)
+    - 문자열일 경우 문자 '$'가 가지는 의미
+    | 달러 시퀀스 | 교체되는 내용 |
+    | :--- | :--- |
+    | $$ | $ |
+    | $& | 일치하는 텍스트 |
+    | $숫자 | 해당 숫자의 캡처 그룹 텍스트 |
+    | $` | 일치하는 부분 앞에 있는 텍스트 |
+    | $' | 일치하는 부분 뒤에 있는 텍스트 |
+```javascript
+var oldAreaCode = /\((\d{3})\)/g;
+var p = '(555)666-1212'.replace(oldAreaCode, '$1-'); //p는 555-666-1212 (첫번째 캡처 그룹에 의해 채택된 '555'가 '$1' 자리로 대체된다.)
+```
+
+
+## string.search(regexp)
+- 일치하는 내용을 찾을 경우 첫 번째 일치하는 부분의 첫 번째 문자 위치를 반환하는 메소드 (매개변수가 정규 표현식 객체라는 점을 제외하면 `indexOf()`와 같다.)
+- g 플래그는 무시되고 검색 시작 위치를 지정하는 매개변수는 없다.
+```javascript
+var text = 'and in it he says "Any damn fool could';
+var pos = text.search(/["']/); // pos는 18
+```
+
+
+## string.slice(start, end)
+- 문자열의 일부분을 복사하여 새로운 문자열을 만드는 메소드
+- start 매개변수가 음수이면 이 값에 `.length` 값을 더한다. (이 특징을 활용해서 끝에서부터 인덱스 값을 지정할 수 있다.)
+- 옵션인 end 매개변수의 기본값은 마지막 문자의 위치 +1(`.length`)이다. 
+```javascript
+var text = 'and in it he says "Any damn fool could';
+var p = text.slice(-5); // p는 'could'
+```
+
+
+## string.split(separator, limit)
+- 구분자(separator)로 문자열을 쪼개어 각각의 항목이 담긴 **배열**을 생성하는 메소드
+- 옵션인 limit은 나눌 개수를 지정한다.
+```javascript
+var digits = '1234567890';
+var d = digits.split('', 5); // d는 [ '1', '2', '3', '4', '5' ]
+```
+- 빈 문자열을 사용하면 문자가 하나 하나씩 나뉘어진다.
+- 구분자로 정규 표현식 객체를 사용하면 g 플래그는 무시된다.
+
+
+## string.substring(start, end)
+- 음수로 된 매개변수를 무시한다는 점을 빼면 `string.slice()`메소드와 같다. (slice가 더 좋다.)
+```javascript
+var text = 'and in it he says "Any damn fool could';
+var p = text.substring(-5); // 'and in it he says "Any damn fool could' 전체 문장을 반환한다.
+```
+
+
+## string.toLocaleLowerCase() & string.toLocaleUpperCase()
+- 로케일 규칙을 사용하여 문자열을 소문자/대문자로 변환한다. 터키어에 유용하다.
+
+
+## string.toLowerCase() & string.toUpperCase()
+- 문자열을 소문자/대문자로 변환하여 반환한다.
+
+
+## String.fromCharCode(char...)
+- 인수로 넘어온 숫자값들을 문자열로 변환하여 반환하는 메소드
+`var a = String.fromCharCode(67, 97, 116); //a는 Cat`

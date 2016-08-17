@@ -28,6 +28,8 @@
 - [regular-expression.md](http://til.wiki.dev/JavaScript/regular-expression)
 - [declare-objects.md](http://til.wiki.dev/JavaScript/declare-objects)
 - [methods-of-array.md](http://til.wiki.dev/JavaScript/methods-of-array)
+- [testing-and-debugging.md](http://til.wiki.dev/JavaScript/testing-and-debugging)
+- [functional-language.md](http://til.wiki.dev/JavaScript/functional-language)
 
 ### a. BasicAlgorithm
 - [reverse-a-string.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/reverse-a-string)

@@ -1,4 +1,5 @@
 #Find the Longest Word in a string
+_from FreeCodeCamp_
 
 ## 문자열에서 가장 긴 단어를 찾는 함수 만들기
 - `split()`메소드와 `length`속성을 이용해서 가장 긴 단어를 찾는 함수를 만들 수 있다.

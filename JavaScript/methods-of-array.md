@@ -1,4 +1,5 @@
 #methods of array
+_from FreeCodeCamp_
 
 ## 1. 예제 01 - `map()` 메소드를 이용한 반복문 처리
 * `map()` 메소드는 배열을 반복하면서 해당 특정 동작 수행하는 함수이다.

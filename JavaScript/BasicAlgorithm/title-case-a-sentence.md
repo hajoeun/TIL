@@ -1,4 +1,5 @@
 #Title case a sentence
+_from FreeCodeCamp_
 
 ## 각 단어의 첫글자만 대문자로 변환하는 함수 만들기
 - 문장을 받아서 단어별 첫글자를 대문자로 리턴하는 함수를 만들어보자.

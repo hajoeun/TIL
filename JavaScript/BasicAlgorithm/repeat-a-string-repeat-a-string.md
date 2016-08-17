@@ -1,4 +1,5 @@
 #Repeat a string repeat a string
+_from FreeCodeCamp_
 
 ## 문자열을 반복시키는 함수 만들기
 - 문자열을 원하는만큼 반복시켜 문자열을 반환하는 함수를 만들자

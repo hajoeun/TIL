@@ -1,25 +1,7 @@
 # Today I Learned
 
 
-## 1. [FreeCodeCamp](https://www.freecodecamp.com/)
-
-###  a. JavaScript
-- [regular-expression.md](http://til.wiki.dev/FreeCodeCamp/JavaScript/regular-expression)
-- [declare-objects.md](http://til.wiki.dev/FreeCodeCamp/JavaScript/declare-objects)
-- [methods-of-array.md](http://til.wiki.dev/FreeCodeCamp/JavaScript/methods-of-array)
-
-### b. BasicAlgorithm
-- [reverse-a-string.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/reverse-a-string)
-- [find-the-longest-word-in-a-string.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/find-the-longest-word-in-a-string)
-- [repeat-a-string-repeat-a-string.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/repeat-a-string-repeat-a-string)
-- [chunky-monkey.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/chunky-monkey)
-- [confirm-the-ending.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/confirm-the-ending)
-- [return-largest-numbers-in-arrays.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/return-largest-numbers-in-arrays)
-- [title-case-a-sentence.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/title-case-a-sentence)
-- [truncate-a-string.md](http://til.wiki.dev/FreeCodeCamp/BasicAlgorithm/truncate-a-string)
-
-
-## 2. JavaScript
+## 1. JavaScript
 - [this-keyword.md](http://til.wiki.dev/JavaScript/this-keyword)
 - [scope-and-closure.md](http://til.wiki.dev/JavaScript/scope-and-closure)
 - [function-of-protype.md](http://til.wiki.dev/JavaScript/function-of-protype)
@@ -43,21 +25,34 @@
 - [offline-applications-and-clientside-storage.md](http://til.wiki.dev/JavaScript/offline-applications-and-clientside-storage)
 - [desing-pattern.md](http://til.wiki.dev/JavaScript/design-pattern)
 - [advanced-techniques.md](http://til.wiki.dev/JavaScript/advanced-techniques)
+- [regular-expression.md](http://til.wiki.dev/JavaScript/regular-expression)
+- [declare-objects.md](http://til.wiki.dev/JavaScript/declare-objects)
+- [methods-of-array.md](http://til.wiki.dev/JavaScript/methods-of-array)
+
+### a. BasicAlgorithm
+- [reverse-a-string.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/reverse-a-string)
+- [find-the-longest-word-in-a-string.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/find-the-longest-word-in-a-string)
+- [repeat-a-string-repeat-a-string.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/repeat-a-string-repeat-a-string)
+- [chunky-monkey.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/chunky-monkey)
+- [confirm-the-ending.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/confirm-the-ending)
+- [return-largest-numbers-in-arrays.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/return-largest-numbers-in-arrays)
+- [title-case-a-sentence.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/title-case-a-sentence)
+- [truncate-a-string.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/truncate-a-string)
 
 
-## 3. macOS
+## 2. macOS
 
 ###  a. Finder
 - [hidden-files-hide-and-show.md](http://til.wiki.dev/macOS/Finder/hidden-files-hide-and-show)
 
 
-## 4. HTML
+## 3. HTML
 - [entities.md](http://til.wiki.dev/HTML/entities)
 
 
-## 5. jQuery
+## 4. jQuery
 - [introduction-to-jquery.md](http://til.wiki.dev/jQuery/introduction-to-jquery)
 
 
-## 6. CSS
+## 5. CSS
 - [introduction-to-css.md](http://til.wiki.dev/CSS/introduction-to-css)

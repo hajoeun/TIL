@@ -59,7 +59,7 @@ console.log("Total i: " + i + " j: " + j + "<br>");
 
 
 ## 3. try/catch/finally
-- try/catch/finally 문은 예외 처리 기법이다. [참고 - Function() 11.예외 처리](http://til.wiki.dev/JavaScript/Function())
+- try/catch/finally 문은 예외 처리 기법이다. [참고 - Function() 11.예외 처리](http://til.wiki.dev/JavaScript/Function()#function_11-예외-처리-exception-handling)
 - _try_ 절은 예외가 발생할지도 모르는 코드 블록을 정의하는 역할을 한다.
 - _catch_ 절은 try 블록 내부에서 예외가 발생할 경우 호출되는 문장 블록이다.
 - _finally_ 절은 try 블록에서 일어난 일에 관계없이 항상 실행이 보장되어야 할 뒷정리용 코드가 포함된다. finally 절은 try 블록이 `return`,`break`,`continue`로 끝났다고 해도 실행된다.

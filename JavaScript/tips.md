@@ -325,3 +325,11 @@ _from JavaScript Good Part_
  
  console.log(myMatrix);
  ```
+ 
+ 
+## 26. apply(), call()의 의미
+- **이렇게 호출하면 첫번째 매개변수에 해당하는 객체가 호출에 사용되는 함수를 메소드로 가지는 것과 같은 효과를 낼 수 있다.**
+
+
+## 27. !! 구문
+- !! 구문은 자바스크립트 표현식을 Boolean 객체로 만드는 간단한 방법이다. `!!"String"`은 true가 되고 `!!0`은 false가 된다.

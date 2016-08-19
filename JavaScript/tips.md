@@ -320,16 +320,51 @@ _from JavaScript Good Part_
      }
      return mat;
  };
- 
+
  myMatrix = Array.identity(4);
- 
+
  console.log(myMatrix);
  ```
- 
- 
+
+
 ## 26. apply(), call()의 의미
 - **이렇게 호출하면 첫번째 매개변수에 해당하는 객체가 호출에 사용되는 함수를 메소드로 가지는 것과 같은 효과를 낼 수 있다.**
 
 
 ## 27. !! 구문
 - !! 구문은 자바스크립트 표현식을 Boolean 객체로 만드는 간단한 방법이다. `!!"String"`은 true가 되고 `!!0`은 false가 된다.
+
+
+## 28. constructor 프로퍼티 참조를 사용하여 새 객체 인스턴스 만들기
+_from Secrets of the JavaScript Ninja_
+- 원본 생성자 함수에 직접 접근하지 않고도 같은 생성자를 가지는 새 객체 인스턴스를 만들 수 있다.
+- 이 방법은 심지어 원본 생성자 함수가 더 이상 유효 범위에 있지 않더라도 사용할 수 있다.
+```javascript
+function Ninja(){}
+var ninja = new Ninja();
+var ninja2 = new ninja.constructor();  
+```
+
+
+## 29. HTML DOM 프로토타입
+- 현대적인 대부분의 브라우저에서 모든 DOM 엘리먼트가 HTMLElement 생성자를 상속한다.
+- 따라서 HTMLElement 프로토타입에 접근할 수 있고, 따라서 어떤 HTML 노드든 확장할 수 있다.
+```javascript
+HTMLElement.prototype.remove = function() {     //프로토타입에 새로운 메서드를 추가한다.
+  if (this.parentNode)
+    this.parentNode.removeChild(this);
+};
+
+var a = document.getElementById("a");            
+a.parentNode.removeChild(a);                     //기존의 방법대로 엘리먼트를 제거한다.
+
+document.getElementById("b").remove();           //프로토타입에 새로 추가한 메서드로 엘리먼트를 제거한다. (보다 간편하다.)
+```
+- 하지만 `var elem = new HTMLElement();` 이런식으로 HTML 엘리먼트의 인스턴스를 직접 생성할 수는 없다.
+- 더군다나 이와 같이 HTML DOM의 프로토타입을 수정하는 건 예기치 못한 조작 오류를 범하기 쉬워서 좋은 접근법은 아니다.
+
+
+## 30. 네이티브 객체 프로토타입 확장
+- 네이티브 객체도 프로토타입을 사용하면 확장이 가능하다.
+- 다만, `Object()` 객체는 프로토타입 체인의 가장 끝에 위치하기 때문에 다른 객체에 예상치 못한 영향을 미칠 수 있다. 반드시 `Object()` 객체에 새로운 프로퍼티나 메서드를 추가하기 원한다면 `hasOwnProperty()` 메서드를 활용해서 문제를 근원부터 차단해야 한다.
+- 그리고 `Number()` 객체의 확장에도 주의를 기울여야 한다. 확장된 메서드(혹은 프로퍼티)에 리터럴 타입으로 접근하려고 하면 에러가 발생한다. `5.add(3)`는 문법 에러가 발생한다. `(5).add(3) == 8`는 괜찮다.

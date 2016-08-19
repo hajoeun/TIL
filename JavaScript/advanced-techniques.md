@@ -42,7 +42,7 @@ console.log(person1.name); // 'Joeun'이 기록된다. 올바른 this에 바인�
 - 스코프 확인 생성자를 사용하면 컨텍스트가 특정 생성자에 묶인다. 그래서 생성자 훔치기를 사용했을 때 상속이 끊어지는 일이 발생할 수 있다.
 ```javascript
 function Person(name, age, job) {
-  if (this instanceof Person) { // Human의 인스턴스임으로 false를 반환하고
+  if (this instanceof arguments.callee) { // Human의 인스턴스임으로 false를 반환하고
     this.name = name;
     this.age = age;
     this.job = job;
@@ -67,7 +67,7 @@ console.log(korean.name); // undefined이 기록된다. 이런... 상속이 끊�
 - 이때 프로토타입 체인을 써서 더 상위 타입으로부터 인스턴스를 확인하도록 유도하면 이런 문제를 방지할 수 있다.
 ```javascript
 function Person(name, age, job) {
-  if (this instanceof Person) { // true! 조상님(상위 타입, 프로토타입) 중에 한분이 Person이 계셔서 this의 인스턴스가 Person이 될 수도 있다!
+  if (this instanceof arguments.callee) { // true! 조상님(상위 타입, 프로토타입) 중에 한분이 Person이 계셔서 this의 인스턴스가 Person이 될 수도 있다!
     this.name = name;
     this.age = age;
     this.job = job;
@@ -84,7 +84,7 @@ function Human(race, country) {
     return "Hello, I am from " + this.country;
   }
 }
-Human.prototype = new Person(); // **바로 이렇게!!** prototype을 Person의 인스턴스로 만들어줘버림!
+Human.prototype = new Person(); // **바로 이렇게!! prototype을 Person의 인스턴스로 만들어줘버림!**
 
 var korean = new Human('Asian', 'South Korea');
 console.log(korean.name); // "Joeun"이 기록된다.

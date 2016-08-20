@@ -4,7 +4,7 @@
 ## 1. JavaScript
 - [this-keyword.md](http://til.wiki.dev/JavaScript/this-keyword)
 - [scope-and-closure.md](http://til.wiki.dev/JavaScript/scope-and-closure)
-- [function-of-protype.md](http://til.wiki.dev/JavaScript/function-of-protype)
+- [function-of-protoype.md](http://til.wiki.dev/JavaScript/function-of-protoype)
 - [Array().md](http://til.wiki.dev/JavaScript/Array())
 - [String().md](http://til.wiki.dev/JavaScript/String())
 - [Number().md](http://til.wiki.dev/JavaScript/Number())
@@ -59,3 +59,7 @@
 
 ## 5. CSS
 - [introduction-to-css.md](http://til.wiki.dev/CSS/introduction-to-css)
+
+
+## 6. Git
+- [introduction-to-git.md](http://til.wiki.dev/Git/introduction-to-git)

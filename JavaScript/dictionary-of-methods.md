@@ -129,7 +129,7 @@ console.log(pi.toExponential()); // 3.141592653589793e+0
 ```
 
 
-## number.toFixeds(fractionDigits)
+## number.toFixed(fractionDigits)
 - 숫자를 고정 소수점 형태로 변환하는 메소드
 - 옵션인 fractionDigits 매개변수는 소수점 아래 몇 째 자리까지 표시할 것인지 지정한다. (0~20 사이의 값, 기본값은 0)
 ```javascript

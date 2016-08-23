@@ -31,6 +31,7 @@
 - [testing-and-debugging.md](http://til.wiki.dev/JavaScript/testing-and-debugging)
 - [functional-language.md](http://til.wiki.dev/JavaScript/functional-language)
 - [thread-and-timer.md](http://til.wiki.dev/JavaScript/thread-and-timer)
+- [runtime-code-evaluation.md](http://til.wiki.dev/JavaScript/runtime-code-evaluation)
 
 ### a. BasicAlgorithm
 - [reverse-a-string.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/reverse-a-string)

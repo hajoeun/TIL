@@ -30,6 +30,7 @@
 - [methods-of-array.md](http://til.wiki.dev/JavaScript/methods-of-array)
 - [testing-and-debugging.md](http://til.wiki.dev/JavaScript/testing-and-debugging)
 - [functional-language.md](http://til.wiki.dev/JavaScript/functional-language)
+- [thread-and-timer.md](http://til.wiki.dev/JavaScript/thread-and-timer)
 
 ### a. BasicAlgorithm
 - [reverse-a-string.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/reverse-a-string)

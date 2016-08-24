@@ -368,3 +368,51 @@ document.getElementById("b").remove();           //프로토타입에 새로 추
 - 네이티브 객체도 프로토타입을 사용하면 확장이 가능하다.
 - 다만, `Object()` 객체는 프로토타입 체인의 가장 끝에 위치하기 때문에 다른 객체에 예상치 못한 영향을 미칠 수 있다. 반드시 `Object()` 객체에 새로운 프로퍼티나 메서드를 추가하기 원한다면 `hasOwnProperty()` 메서드를 활용해서 문제를 근원부터 차단해야 한다.
 - 그리고 `Number()` 객체의 확장에도 주의를 기울여야 한다. 확장된 메서드(혹은 프로퍼티)에 리터럴 타입으로 접근하려고 하면 에러가 발생한다. `5.add(3)`는 문법 에러가 발생한다. `(5).add(3) == 8`는 괜찮다.
+
+
+##  31. 속성과 프로퍼티, 차이점
+- 속성은 HTML에서 엘리먼트들이 가지는 속성을 의미한다. href, id, src 등이 바로 속성이다. `<a href="http://www.naver.com/"></a>`
+- 프로퍼티는 자바스크립트에서 HTML의 엘리먼트를 변수로 가져와서 엘리먼트의 속성에 접근하기 위해 점 연산자 표기법으로 접근하는 것을 의미한다. `var element = document.getElementById("test"); element.src;`
+- 일반적으로는 속성과 프로퍼티의 이름이 같지만, 다른 경우도 존재한다. 예약어인 경우 혹은 대소문자 구분을 위한 경우(HTML은 대소문자를 구분하지 않지만 자바스크립트는 다르다.)이다.
+
+| 속성 이름 | 프로퍼티 이름 |
+| :--- | :--- |
+| for | htmlFor |
+| class | className |
+| readonly | readOnly |
+| maxlength | maxLength |
+| cellspacing | cellSpacing |
+| rowspan | rowSpan |
+| colspan | colSpan |
+| tabindex | tabIndex |
+| cellpadding | cellPadding |
+| usemap | useMap |
+| frameborder | frameBorder |
+| contenteditable | contentEditable |
+| float | cssFloat |
+
+- 엘리먼트가 가진 모든 속성이 프로퍼티로 표현되지는 않는다. 태생적으로 HTML DOM에 정의된 속성은 프로퍼티로도 표현되지만, 사용자의 의해 임의로 지정한 사용자 정의 속성은 프로퍼티로 자동으로 표현되지 않는다.
+- 사용자 정의 속성 값에 접근하기 위해선 setAttribute()와 getAttribute()를 사용하면 된다. 이렇게 응용할 수 있다. `var value = element.someValue ? element.someValue : element.getAttribute('someValue');`
+- 일반적으로는 프로퍼티 접근이 DOM 속성 메서드를 사용하는 것보다 빠르다.
+
+
+## 32. XML과 HTML의 차이점
+- HTML DOM의 특성은 어떤 속성에 대해 그 속성과 같은 이름을 가진 프로퍼티가 자동으로 생성되어 있다는 점이다. 이와 반대로 XML DOM에서는 어떤 프로퍼티도 자동으로 엘리먼트에 생성되지 않는다.
+- 특정 엘리먼트가 XML 엘리먼트인지 아닌지를 판단하기 위해 아래와 같은 형식 검사를 할 수 있다.
+```javascript
+function isXML(elem) {
+  return (elem.ownerDocument ||
+          elem.documentElement.nodeName.toLowerCase() !== "html");
+} // 해당 함수는 주어진 엘리먼트가 XML 엘리먼트라면 참을 반환한다.
+```
+
+
+## 33. URL 정규화
+- 최신 브라우저에서는 URL을 나타내는 프로퍼티(href, src 또는 action)의 값을 읽으면, 원래 지정한 속성과 일치하는 값이 아닌 표준 형식의 URL로 자동으로 변경된 값을 얻는다. 이것이 자동 정규화라는 기능이다.
+- 자동 정규화되지 않은 값을 얻기 위해선 프로퍼티로 접근하지 않고 속성으로 접근해야 한다. `element.getAttribute('href')`
+
+
+## 34. style 속성과 프로퍼티
+- 엘리먼트의 스타일과 관련한 정보를 얻으려면 `element.style.color`와 같은 식으로 프로퍼티로 접근이 가능하다. __인라인 스타일만 가능하다!__
+- 스타일 프로퍼티에 의해 정의된 스타일 값은 어떤 규칙보다 우선해서 적용된다.
+- window 객체의 getComputedStyle() 메서드를 사용하면 이미 평가된 스타일(css 파일이나 style 태그 안에 정의된 스타일)을 읽어들일 수 있다. `window.getComputedStyle(element)` 스타일을 정의하는 객체가 반환된다.

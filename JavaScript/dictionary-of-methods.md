@@ -190,7 +190,7 @@ while ((a = tag.exec(text))) {
 ```
 
 
-## regexp.text(string)
+## regexp.test(string)
 - regexp가 문자열에 일치하면 true를 반환하고 그렇지 않으면 false를 반환하는 메소드 (정규표현식 메소드들 중에서 가장 간단하고 가장 빠른 메소드, g 플래그와 사용할 수 없다.)
 ```javascript
 var b = /&.+;/.test('Frank &amp; beans');

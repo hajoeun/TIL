@@ -43,6 +43,8 @@
 - [title-case-a-sentence.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/title-case-a-sentence)
 - [truncate-a-string.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/truncate-a-string)
 - [check-for-palindromes.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/check-for-palindromes)
+- [equal-sides-of-an-array.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/equal-sides-of-an-array)
+- [directions-reduction.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/directions-reduction)
 
 
 ## 2. macOS

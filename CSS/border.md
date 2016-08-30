@@ -22,7 +22,7 @@ _from MDN **with funny**_
 ## 3. border-width
 - 테두리의 두께를 정하는 속성이며 `border-방향-width`의 형태로 방향을 지정할 수 있다.
 - 값은 `border-right-width: 1px;` 형태로 지정하며 직접 길이(length) 단위 값을 지정하는 방법 외에 `thin`,`medium`,`thick`등 상수값으로 지정할 수 있다.
-- 길이의 단위에 대해서는 [이곳](http://til.wiki.dev/CSS/all-about-length)에서 자세하게 설명한다.
+- 길이의 단위에 대해서는 [이곳](http://til.wiki.dev/CSS/length-unit)에서 자세하게 설명한다.
 
 
 ## 4. border-style

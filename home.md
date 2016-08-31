@@ -45,7 +45,8 @@
 - [check-for-palindromes.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/check-for-palindromes)
 - [equal-sides-of-an-array.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/equal-sides-of-an-array)
 - [directions-reduction.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/directions-reduction)
-
+- [sum-all-numbers-in-a-range.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/sum-all-numbers-in-a-range)
+- [diff-two-arrays.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/diff-two-arrays)
 
 ## 2. macOS
 

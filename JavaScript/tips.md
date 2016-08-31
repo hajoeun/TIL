@@ -416,3 +416,34 @@ function isXML(elem) {
 - 엘리먼트의 스타일과 관련한 정보를 얻으려면 `element.style.color`와 같은 식으로 프로퍼티로 접근이 가능하다. __인라인 스타일만 가능하다!__
 - 스타일 프로퍼티에 의해 정의된 스타일 값은 어떤 규칙보다 우선해서 적용된다.
 - window 객체의 getComputedStyle() 메서드를 사용하면 이미 평가된 스타일(css 파일이나 style 태그 안에 정의된 스타일)을 읽어들일 수 있다. `window.getComputedStyle(element)` 스타일을 정의하는 객체가 반환된다.
+
+
+## 35. Trick - 깔끔하게 줄 맞추기
+- [자바스크립트 핵심 가이드] p.113 정규표현식 예제 중
+
+예제 코드 (정규표현식을 사용해서 url을 파싱하는 코드, substring 메서드를 사용해서 결과를 깔끔하게 정렬해서 출력한다.)
+```javascript
+var parse_url = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/,
+    url = "http://www.ora.com:80/goodparts?q#fragment";
+var result = parse_url.exec(url);
+
+var names = ['url', 'scheme', 'slash', 'host', 'port', 'path', 'query', 'hash'],
+    blanks = '       ', // 고정된 간격을 유지하게 하기 위해 사용되는 공백 변수
+    i;
+
+for (i = 0; i < names.length; i += 1) {
+  console.log(names[i] + ':' + blanks.substring(names[i].length), result[i]); // substring을 어떻게 사용하는지 주목!!
+}
+```
+
+실행 결과
+```bash
+url:     http://www.ora.com:80/goodparts?q#fragment
+scheme:  http
+slash:   //
+host:    www.ora.com
+port:    80
+path:    goodparts
+query:   q
+hash:    fragment
+```

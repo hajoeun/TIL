@@ -291,6 +291,17 @@ var sum12 = sum.curry(12); //'sum12'라는 커링된 함수를 만들어준다.
 console.log(sum12(3)); //'15'가 기록된다.
 ```
 
+-  바인드 메서드로 구현하는 커링
+```javascript
+var add = function(a, b) {
+  return a + b;
+}
+
+var sum = add.bind(null, 10); // 커링 함수 구현
+var sum10 = sum(2);
+console.log(sum10); // 12가 기록된다.
+```
+
 
 ## 15. 메모이제이션(memoization)
 - 함수는 불필요한 작업을 피하기 위해서 이전에 연산한 결과를 저장하고 있는 객체를 사용할 수 있다.

@@ -47,6 +47,7 @@
 - [directions-reduction.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/directions-reduction)
 - [sum-all-numbers-in-a-range.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/sum-all-numbers-in-a-range)
 - [diff-two-arrays.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/diff-two-arrays)
+- [wherefore-art-thou.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/wherefore-art-thou)
 
 ## 2. macOS
 

@@ -2,38 +2,35 @@
 
 
 ## 1. JavaScript
-- [this-keyword.md](http://til.wiki.dev/JavaScript/this-keyword)
-- [scope-and-closure.md](http://til.wiki.dev/JavaScript/scope-and-closure)
-- [function-of-protoype.md](http://til.wiki.dev/JavaScript/function-of-protoype)
-- [Array().md](http://til.wiki.dev/JavaScript/Array())
-- [String().md](http://til.wiki.dev/JavaScript/String())
-- [Number().md](http://til.wiki.dev/JavaScript/Number())
-- [Boolean().md](http://til.wiki.dev/JavaScript/Boolean())
-- [tips.md](http://til.wiki.dev/JavaScript/tips)
-- [operators.md](http://til.wiki.dev/JavaScript/operators)
-- [Function().md](http://til.wiki.dev/JavaScript/Function())
-- [object.md](http://til.wiki.dev/JavaScript/object)
-- [inheritance.md](http://til.wiki.dev/JavaScript/inheritance)
-- [variable.md](http://til.wiki.dev/JavaScript/variable)
-- [statements.md](http://til.wiki.dev/JavaScript/statements)
-- [browser-and-javascript.md](http://til.wiki.dev/JavaScript/browser-and-javascript)
-- [document-scripting.md](http://til.wiki.dev/JavaScript/document-scripting)
-- [dictionary-of-methods.md](http://til.wiki.dev/JavaScript/dictionary-of-methods)
-- [cookie-property.md](http://til.wiki.dev/JavaScript/cookie-property)
-- [module-and-namespace.md](http://til.wiki.dev/JavaScript/module-and-namespace)
-- [json.md](http://til.wiki.dev/JavaScript/json)
-- [offline-applications-and-clientside-storage.md](http://til.wiki.dev/JavaScript/offline-applications-and-clientside-storage)
-- [desing-pattern.md](http://til.wiki.dev/JavaScript/design-pattern)
-- [advanced-techniques.md](http://til.wiki.dev/JavaScript/advanced-techniques)
-- [regular-expression.md](http://til.wiki.dev/JavaScript/regular-expression)
-- [declare-objects.md](http://til.wiki.dev/JavaScript/declare-objects)
-- [methods-of-array.md](http://til.wiki.dev/JavaScript/methods-of-array)
-- [testing-and-debugging.md](http://til.wiki.dev/JavaScript/testing-and-debugging)
-- [functional-language.md](http://til.wiki.dev/JavaScript/functional-language)
-- [thread-and-timer.md](http://til.wiki.dev/JavaScript/thread-and-timer)
-- [runtime-code-evaluation.md](http://til.wiki.dev/JavaScript/runtime-code-evaluation)
 
-### a. BasicAlgorithm
+### 01. Beginner
+- [this-keyword.md](http://til.wiki.dev/JavaScript/Beginner/this-keyword)
+- [scope-and-closure.md](http://til.wiki.dev/JavaScript/Beginner/scope-and-closure)
+- [function-of-protoype.md](http://til.wiki.dev/JavaScript/Beginner/function-of-protoype)
+- [Array().md](http://til.wiki.dev/JavaScript/Beginner/Array())
+- [String().md](http://til.wiki.dev/JavaScript/Beginner/String())
+- [Number().md](http://til.wiki.dev/JavaScript/Beginner/Number())
+- [Boolean().md](http://til.wiki.dev/JavaScript/Beginner/Boolean())
+- [tips.md](http://til.wiki.dev/JavaScript/Beginner/tips)
+- [operators.md](http://til.wiki.dev/JavaScript/Beginner/operators)
+- [Function().md](http://til.wiki.dev/JavaScript/Beginner/Function())
+- [object.md](http://til.wiki.dev/JavaScript/Beginner/object)
+- [inheritance.md](http://til.wiki.dev/JavaScript/Beginner/inheritance)
+- [variable.md](http://til.wiki.dev/JavaScript/Beginner/variable)
+- [statements.md](http://til.wiki.dev/JavaScript/Beginner/statements)
+- [browser-and-javascript.md](http://til.wiki.dev/JavaScript/Beginner/browser-and-javascript)
+- [document-scripting.md](http://til.wiki.dev/JavaScript/Beginner/document-scripting)
+- [dictionary-of-methods.md](http://til.wiki.dev/JavaScript/Beginner/dictionary-of-methods)
+- [cookie-property.md](http://til.wiki.dev/JavaScript/Beginner/cookie-property)
+- [module-and-namespace.md](http://til.wiki.dev/JavaScript/Beginner/module-and-namespace)
+- [json.md](http://til.wiki.dev/JavaScript/Beginner/json)
+- [offline-applications-and-clientside-storage.md](http://til.wiki.dev/JavaScript/Beginner/offline-applications-and-clientside-storage)
+- [desing-pattern.md](http://til.wiki.dev/JavaScript/Beginner/design-pattern)
+- [regular-expression.md](http://til.wiki.dev/JavaScript/Beginner/regular-expression)
+- [declare-objects.md](http://til.wiki.dev/JavaScript/Beginner/declare-objects)
+- [methods-of-array.md](http://til.wiki.dev/JavaScript/Beginner/methods-of-array)
+
+### 02. BasicAlgorithm
 - [reverse-a-string.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/reverse-a-string)
 - [find-the-longest-word-in-a-string.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/find-the-longest-word-in-a-string)
 - [repeat-a-string-repeat-a-string.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/repeat-a-string-repeat-a-string)
@@ -48,6 +45,16 @@
 - [sum-all-numbers-in-a-range.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/sum-all-numbers-in-a-range)
 - [diff-two-arrays.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/diff-two-arrays)
 - [wherefore-art-thou.md](http://til.wiki.dev/JavaScript/BasicAlgorithm/wherefore-art-thou)
+
+### 03. Advanced
+- [advanced-techniques.md](http://til.wiki.dev/JavaScript/Advanced/advanced-techniques)
+- [testing-and-debugging.md](http://til.wiki.dev/JavaScript/Advanced/testing-and-debugging)
+- [functional-language.md](http://til.wiki.dev/JavaScript/Advanced/functional-language)
+- [thread-and-timer.md](http://til.wiki.dev/JavaScript/Advanced/thread-and-timer)
+- [runtime-code-evaluation.md](http://til.wiki.dev/JavaScript/Advanced/runtime-code-evaluation)
+
+### 04. Libraries
+
 
 ## 2. macOS
 

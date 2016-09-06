@@ -47,14 +47,14 @@
 - [wherefore-art-thou.md](http://til.wiki.dev/JavaScript/02.BasicAlgorithm/wherefore-art-thou)
 
 ### 03. Advanced
-- [03.Advanced-techniques.md](http://til.wiki.dev/JavaScript/03.Advanced/03.Advanced-techniques)
+- [advanced-techniques.md](http://til.wiki.dev/JavaScript/03.Advanced/advanced-techniques)
 - [testing-and-debugging.md](http://til.wiki.dev/JavaScript/03.Advanced/testing-and-debugging)
 - [functional-language.md](http://til.wiki.dev/JavaScript/03.Advanced/functional-language)
 - [thread-and-timer.md](http://til.wiki.dev/JavaScript/03.Advanced/thread-and-timer)
 - [runtime-code-evaluation.md](http://til.wiki.dev/JavaScript/03.Advanced/runtime-code-evaluation)
 
 ### 04. Libraries
-
+- [underscore.js.md](http://til.wiki.dev/JavaScript/04.Libraries/underscore.js)
 
 ## 2. macOS
 

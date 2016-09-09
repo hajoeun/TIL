@@ -6,7 +6,7 @@
 ### 01. Beginner
 - [this-keyword.md](http://til.wiki.dev/JavaScript/01.Beginner/this-keyword)
 - [scope-and-closure.md](http://til.wiki.dev/JavaScript/01.Beginner/scope-and-closure)
-- [function-of-protoype.md](http://til.wiki.dev/JavaScript/01.Beginner/function-of-protoype)
+- [function-of-protoype.md](http://til.wiki.dev/JavaScript/01.Beginner/function-of-prototype)
 - [Array().md](http://til.wiki.dev/JavaScript/01.Beginner/Array())
 - [String().md](http://til.wiki.dev/JavaScript/01.Beginner/String())
 - [Number().md](http://til.wiki.dev/JavaScript/01.Beginner/Number())

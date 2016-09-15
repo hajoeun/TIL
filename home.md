@@ -45,6 +45,11 @@
 - [sum-all-numbers-in-a-range.md](http://til.wiki.dev/JavaScript/02.BasicAlgorithm/sum-all-numbers-in-a-range)
 - [diff-two-arrays.md](http://til.wiki.dev/JavaScript/02.BasicAlgorithm/diff-two-arrays)
 - [wherefore-art-thou.md](http://til.wiki.dev/JavaScript/02.BasicAlgorithm/wherefore-art-thou)
+- [DNA-paring.md](http://til.wiki.dev/JavaScript/02.BasicAlgorithm/DNA-paring)
+- [search-and-replace.md](http://til.wiki.dev/JavaScript/02.BasicAlgorithm/search-and-replace)
+- [missing-letters.md](http://til.wiki.dev/JavaScript/02.BasicAlgorithm/missing-letters)
+- [pig-latin.md](http://til.wiki.dev/JavaScript/02.BasicAlgorithm/pig-latin)
+- [convert-html.md](http://til.wiki.dev/JavaScript/02.BasicAlgorithm/convert-html)
 
 ### 03. Advanced
 - [advanced-techniques.md](http://til.wiki.dev/JavaScript/03.Advanced/advanced-techniques)

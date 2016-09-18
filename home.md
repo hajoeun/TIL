@@ -52,6 +52,7 @@
 - [convert-html.md](http://til.wiki.dev/JavaScript/02.BasicAlgorithm/convert-html)
 - [spinal-tap-case.md](http://til.wiki.dev/JavaScript/02.BasicAlgorithm/spinal-tap-case)
 - [sum-all-fibonacci-numbers.md](http://til.wiki.dev/JavaScript/02.BasicAlgorithm/sum-all-fibonacci-numbers)
+- [sum-all-primes.md](http://til.wiki.dev/JavaScript/02.BasicAlgorithm/sum-all-primes)
 
 ### 03. Advanced
 - [advanced-techniques.md](http://til.wiki.dev/JavaScript/03.Advanced/advanced-techniques)

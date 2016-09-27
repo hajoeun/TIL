@@ -60,14 +60,19 @@
 - [functional-language.md](http://til.wiki.dev/JavaScript/03.Advanced/functional-language)
 - [thread-and-timer.md](http://til.wiki.dev/JavaScript/03.Advanced/thread-and-timer)
 - [runtime-code-evaluation.md](http://til.wiki.dev/JavaScript/03.Advanced/runtime-code-evaluation)
+- [Promise.md](http://til.wiki.dev/JavaScript/03.Advanced/Promise)
 
 ### 04. Libraries
 - [underscore.js.md](http://til.wiki.dev/JavaScript/04.Libraries/underscore.js)
+
 
 ## 2. macOS
 
 ###  a. Finder
 - [hidden-files-hide-and-show.md](http://til.wiki.dev/macOS/Finder/hidden-files-hide-and-show)
+
+###  b. Terminal
+- [rootless.md](http://til.wiki.dev/macOS/Terminal/rootless)
 
 
 ## 3. HTML
@@ -91,3 +96,12 @@
 
 ## 7. APIs
 - [wikipedia.md](http://til.wiki.dev/APIs/wikipedia)
+
+
+## 8. NodeJS
+- [npm.md](http://til.wiki.dev/NodeJS/npm)
+
+
+## 9. PostgreSQL
+- [authentication-fail-handling.md](http://til.wiki.dev/authentication-fail-handling.md)
+- [install-and-usage.md](http://til.wiki.dev/install-and-usage)

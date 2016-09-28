@@ -62,9 +62,6 @@
 - [runtime-code-evaluation.md](http://til.wiki.dev/JavaScript/03.Advanced/runtime-code-evaluation)
 - [Promise.md](http://til.wiki.dev/JavaScript/03.Advanced/Promise)
 
-### 04. Libraries
-- [underscore.js.md](http://til.wiki.dev/JavaScript/04.Libraries/underscore.js)
-
 
 ## 2. macOS
 
@@ -79,8 +76,10 @@
 - [entities.md](http://til.wiki.dev/HTML/entities)
 
 
-## 4. jQuery
-- [introduction-to-jquery.md](http://til.wiki.dev/jQuery/introduction-to-jquery)
+## 4. Libraries
+- [underscore.js.md](http://til.wiki.dev/Libraries/underscore.js)
+- [jquery.md](http://til.wiki.dev/Libraries/jquery)
+- [bootstrap.md](http://til.wiki.deb/Libraries/bootstrap)
 
 
 ## 5. CSS
@@ -105,3 +104,4 @@
 ## 9. PostgreSQL
 - [authentication-fail-handling.md](http://til.wiki.dev/authentication-fail-handling.md)
 - [install-and-usage.md](http://til.wiki.dev/install-and-usage)
+

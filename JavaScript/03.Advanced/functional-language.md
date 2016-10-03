@@ -155,3 +155,42 @@ addArrayElements([1,3]); // 4를 반환한다.
     - 변수 탐색은 가장 내부 스코프에서 외부로 진행된다. 변수 탐색 과정에서 먼저 발견된 변수까지 어휘 스코프가 결정된다.
 - 동적 스코프 dynamic scope
     - 바인딩 이름과 관련한 전역 맵 스택을 유지하는 것이 동적 스코핑의 핵심이다.
+- 함수 스코프
+    - 함수 스코프는 자바스크립트에서 기본적으로 준수하는 스코핑 모델이다.
+    - 자바스크립트에서는 함수 바디 안의 모든 var 선언을 암묵적으로 자신이 포함된 함수의 바디 시작 부분으로 이동시킨다. (호이스팅 Hoisting)
+    - 함수의 모든 코드는 내부에 정의된 모든 변수에 접근할 수 있다.
+- 클로저
+    - 클로저는 근처에서 만들어진 변수를 '캡처'하는 함수다.
+    - 나중에 사용할 목적으로 정의된 스코프에 포함된 외부 바인딩을 캡처하는 함수이다.
+    ```javascript
+    function whatWasTheLocal() {
+        var CAPTURED = "Oh hai"; // 캡처될 지역 변수
+        
+        return function() {
+            return "The Local was: " + CAPTURED;
+        };
+    } // 클로저 함수 whatWasTheLocal
+    
+    var reportLocal = whatWasTheLocal(); 
+    reportLocal(); // The Local was: Oh hai
+    ```
+    - 내부 함수를 포함하는 함수는 내부에 정의된 모든 변수(자유 변수)를 볼 수 있다.
+    - 클로저는 함수 스코프를 벗어날 수 있게 한다. 
+    - 셰도잉(Shadowing): 변수가 특정 스코프에 정의되어 있는 상태에서 하위스코프에서 같은 이름으로 다른 변수를 정의할 때 변수 셰도잉이 발생한다. (overwrite)
+    - 추상화 도구 클로저
+    ```javascript
+    function plucker(field) {
+        return function(obj) {
+            return (obj && obj[field]);
+        };
+    }
+    
+    var best = {title: "Functional JavaScript", author: "Michael Fogus"};
+    var getTitle = plucker('title');
+    
+    getTitle(best); // Functional JavaScript
+    
+    var books = [{title: "Chthon"}, {stars: 5}, {title: "Botchan"}];
+    
+    _.filter(books, getTitle); // [{title: "Chthon"}, {title: "Botchan"}]
+    ```

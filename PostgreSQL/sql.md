@@ -47,6 +47,12 @@ CREATE TABLE [테이블명] (
 - `SELECT title, musician FROM playlist ORDER BY year ASC LIMIT 3;`
 - `SELECT * FROM playlist WHERE musician='Bibi Bourelly';`
 
+- `WHERE` operator
+    - `BETWEEN`: 사이의 값을 원할 때 `SELECT * FROM music WHERE year BETWEEN '20160101' AND '20161231';`
+    - `<>`: 같지 않은 값을 원할 때 (!==)
+    - `LIKE`: 유사한 데이터를 가진 값을 원할 때 `SELECT * FROM music WHERE musician LIKE 'B%';`
+    - `IN`: `OR` 연산자의 중복 사용 없이 사용 가능 `SELECT * FROM music WHERE musician IN ('Bibi Bourelly','Jodi Benson');` == `SELECT * FROM music WHERE musician='Bibi Bourelly' or musician='Jodi Benson';` 
+    
 - 그룹핑: `SELECT * FROM [테이블명] GROUP BY [그룹핑 할 기준 칼럼명]`, `SELECT sex,sum(age),avg(age) FROM GROUP BY sex;`
 - 정렬: `SELECT * FROM [테이블명] ORDER BY [정렬의 기준으로 사용할 열 ?[DESC | ASC]]`
 - 색인(index): 조회할 때 원하는 행을 빠르게 찾을 수 있게 준비해둔 데이터
@@ -60,3 +66,4 @@ CREATE TABLE [테이블명] (
         - LEFT JOIN: 왼쪽 테이블을 기준으로 오른쪽 테이블을 결합 `SELECT s.name, s.location_id, l.name AS address, l.distance  FROM student AS s LEFT JOIN location AS l ON s.location_id = l.id;`
         - RIGHT JOIN: 오른쪽 테이블을 기준으로 왼쪽 테이블을 결합 `RIGHT`
     2. INNER JOIN: 어느 한쪽에 데이터가 없으면 가져오지 않는다. `INNER`
+ 

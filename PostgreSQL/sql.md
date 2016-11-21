@@ -63,7 +63,36 @@ CREATE TABLE [테이블명] (
     - full text: 자연어 검색, myisam에서만 지원
 - JOIN
     1. OUTTER JOIN: 어느 한쪽에 데이터가 없어도 `NULL`로 가져온다.
-        - LEFT JOIN: 왼쪽 테이블을 기준으로 오른쪽 테이블을 결합 `SELECT s.name, s.location_id, l.name AS address, l.distance  FROM student AS s LEFT JOIN location AS l ON s.location_id = l.id;`
-        - RIGHT JOIN: 오른쪽 테이블을 기준으로 왼쪽 테이블을 결합 `RIGHT`
-    2. INNER JOIN: 어느 한쪽에 데이터가 없으면 가져오지 않는다. `INNER`
- 
+        - LEFT JOIN: 왼쪽 테이블을 기준으로 오른쪽 테이블을 결합한다. (교집합 + 왼쪽 테이블) `SELECT s.name, s.location_id, l.name AS address, l.distance  FROM student AS s LEFT JOIN location AS l ON s.location_id = l.id;`
+        - RIGHT JOIN: 오른쪽 테이블을 기준으로 왼쪽 테이블을 결합한다. (교집합 + 오른쪽 테이블) `RIGHT JOIN`
+        - FULL JOIN: 두 테이블을 결합한다. (합집합) `FULL OUTER JOIN`
+    2. INNER JOIN: 어느 한쪽에 데이터가 없으면 가져오지 않는다. (교집합이자 `JOIN`의 디폴트값) `INNER JOIN`
+    
+- UNION: 복수의 테이블의 칼럼을 결합한다. (합집합)
+    
+- 와일드카드 (Wildcard)
+    - `%`: 0개 이상의 문자열
+    - `_`: 하나의 문자열
+    - `[ ]`: 대괄호 안에 있는 특정 문자열 혹은 문자열 범주
+    - `[! ]`, `[^ ]`: 대괄호 안에 있는 특정 문자열 혹은 문자열 범주 외의 모든 것
+    
+- Aliases, 별칭 정하기 `AS`
+    - `SELECT [칼럼명] AS [칼럼 별명] FROM [테이블명]`
+    
+#### SELECT INTO
+- 새로운 테이블 만들며 기존 테이블이 가진 데이터 삽입하기 
+    - `SELECT [칼럼명] INTO [새로운 테이블명] FROM [테이블명]`
+    - `SELECT musician INTO musicians FROM music`
+- 기존 테이블에 다른 테이블이 가진 데이터 삽입하기
+    - `INSERT INTO [데이터를 삽입할 테이블명] SELECT [칼럼명] FROM [데이터를 가져올 테이블명]`
+
+#### ALTER TABLE
+- 테이블의 칼럼을 추가, 삭제, 수정할 수 있다.
+- 추가: `ALTER TABLE [테이블명] ADD [칼럼명] [데이터 타입]`
+- 삭제: `ALTER TABLE [테이블명] DROP COLUMN [칼럼명]`
+- 수정: `ALTER TABLE [테이블명] ALTER COLUMN [칼럼명]`
+
+#### NULL Values
+- 칼럼의 빈 공간을 `NULL` 값으로 표현한다. 
+- 이를 활용해서 `SELECT * FROM music WHERE IS NULL`과 같은 형태로 사용할 수 있다. 
+

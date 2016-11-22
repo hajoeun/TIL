@@ -102,6 +102,7 @@
 
 
 ## 9. PostgreSQL
-- [authentication-fail-handling.md](http://til.wiki.dev/authentication-fail-handling.md)
-- [install-and-usage.md](http://til.wiki.dev/install-and-usage)
+- [authentication-fail-handling.md](http://til.wiki.dev/PostgreSQL/authentication-fail-handling)
+- [install-and-usage.md](http://til.wiki.dev/PostgreSQL/install-and-usage)
+- [sql.md](http://til.wiki.dev/PostgreSQL/sql)
 

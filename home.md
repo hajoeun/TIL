@@ -91,6 +91,8 @@
 
 ## 6. Git
 - [introduction-to-git.md](http://til.wiki.dev/Git/introduction-to-git)
+- [github-page.md](http://til.wiki.dev/Git/github-page)
+- [setting.md](http://til.wiki.dev/Git/setting)
 
 
 ## 7. APIs
@@ -99,6 +101,7 @@
 
 ## 8. NodeJS
 - [npm.md](http://til.wiki.dev/NodeJS/npm)
+- [introduction.md](http://til.wiki.dev/NodeJS/introduction)
 
 
 ## 9. PostgreSQL

@@ -9,9 +9,9 @@
 
 - 삭제 `DROP DATABASE [데이터베이스명];`
 
-- 열람 `SHOW DATABASE;`
+- 열람 `\list`
 
-- 선택 `USE [데이터베이스명];`
+- 선택 `\c [데이터베이스명]`
 
 ### TABLE - 테이블
 - 테이블 생성
@@ -22,11 +22,11 @@ CREATE TABLE [테이블명] (
 );
 ```
 
-- 테이블 목록 열람 `SHOW TABLES;`
+- 테이블 목록 열람 `\d`
 
-- 테이블 스키마 열람 `DESC [테이블명]`
+- 테이블 스키마 열람 `\d [테이블명]`
 
-- 테이블 제거 `DROP TABLE [테이블명];`
+- 테이블 제거 `DROP TABLE [테이블명]`
 
 #### 데이터 삽입
 - `INSERT INTO [테이블명] VALUES ([항목1],[항목2],[항목3],...);`
@@ -90,7 +90,9 @@ CREATE TABLE [테이블명] (
 - 테이블의 칼럼을 추가, 삭제, 수정할 수 있다.
 - 추가: `ALTER TABLE [테이블명] ADD [칼럼명] [데이터 타입]`
 - 삭제: `ALTER TABLE [테이블명] DROP COLUMN [칼럼명]`
-- 수정: `ALTER TABLE [테이블명] ALTER COLUMN [칼럼명]`
+- 수정 
+    - 타입 수정 `ALTER TABLE [테이블명] ALTER COLUMN [칼럼명] TYPE [데이터 타입]`
+    - 이름 수정 `ALTER TABLE [테이블명] RENAME [기존 칼럼명] TO [새 칼럼명]`
 
 #### NULL Values
 - 칼럼의 빈 공간을 `NULL` 값으로 표현한다. 

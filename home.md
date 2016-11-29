@@ -93,6 +93,7 @@
 - [introduction-to-git.md](http://til.wiki.dev/Git/introduction-to-git)
 - [github-page.md](http://til.wiki.dev/Git/github-page)
 - [setting.md](http://til.wiki.dev/Git/setting)
+- [commands](http://til.wiki.dev/Git/commands)
 
 
 ## 7. APIs

@@ -68,7 +68,7 @@ CREATE TABLE [테이블명] (
         - FULL JOIN: 두 테이블을 결합한다. (합집합) `FULL OUTER JOIN`
     2. INNER JOIN: 어느 한쪽에 데이터가 없으면 가져오지 않는다. (교집합이자 `JOIN`의 디폴트값) `INNER JOIN`
     
-    **join 할때 null 값들은 합치지 않는다.**
+    **join 할때 양쪽 다 null 값을 가지는 데이터들은 합치지 않는다.**
     
 - UNION: 복수의 테이블의 칼럼을 결합한다. (합집합)
     

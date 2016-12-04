@@ -1,6 +1,6 @@
 # Today I Learned
 
-JoeunHa가 오늘 새로 배운 것을 다음의 규칙으로 커밋(commit)합니다. ([JayJin의 TIL](https://github.com/milooy/TIL)을 근간으로 작성합니다.)
+JoeunHa가 오늘 새로 배운 것을 다음의 규칙으로 커밋합니다. ([JayJin의 TIL](https://github.com/milooy/TIL)을 근간으로 작성합니다.)
 
 ## 작성 규칙
 - 커밋을 위한 커밋을 하지 않는다. (커밋 메세지는 50/72 포맷을 따른다.)

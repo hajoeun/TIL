@@ -112,6 +112,9 @@
 
 
 ## 10. VIM
-- [setting](http://til.wiki.dev/VIM/setting)
-- [commands](http://til.wiki.dev/VIM/commands)
+- [setting.md](http://til.wiki.dev/VIM/setting)
+- [commands.md](http://til.wiki.dev/VIM/commands)
+
+## 11. Cordova
+- [history.md](http://til.wiki.dev/Cordova/history)
 

@@ -70,6 +70,7 @@
 
 ###  b. Terminal
 - [rootless.md](http://til.wiki.dev/macOS/Terminal/rootless)
+- [bash.md](http://til.wiki.dev/macOS/Terminal/bash)
 
 
 ## 3. HTML

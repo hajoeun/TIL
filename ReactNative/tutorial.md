@@ -20,7 +20,26 @@ _[출처](https://facebook.github.io/react-native/docs/tutorial.html)_
 - 그 과정에서 중괄호를 열고 `{this.props.name}`로 만들어두면 이 컴포넌트가 다른 컴포넌트의 내부에 JSX 문법의 태그명으로 사용되고 여기서 name 이라는 프로퍼티를 지정해주게 되면 그 값이 태그명으로 사용된 컴포넌트의 틀로 뿌려진다.
 
 
-## 
+## State
+- 데이터를 컨트롤 하는데 사용되는 두가지 타입 중 하나인 `state` (나머지는 `props`)
+- 상태가 변하는 데이터에 `state`를 사용한다. 기본적으로 `state`변수를 초기화 시키는 단계를 거치고 이후에 `setState`라는 함수를 사용해서 상태를 변경한다.
+- 비동기에 의해 변하는 데이터를 컨트롤할 때 유용하다.
 
 
+## Style
+- 스타일을 지정하기 위해 CSS 파일을 따로 둘 필요가 없다. 자바스크립트 객체로 스타일을 정의하면 된다. (단, Camel Case로 속성을 정의해야 함!)
+- `StyleSheet.create`라는 함수의 객체로 스타일 객체를 선언하면 된다.
+- 그렇게 함수에 의해 선언된 객체는 역시 중괄호 안에서 객체로 사용된다. `<Text style={styles.red}>RED</Text>`
+- 객체가 지정되지 않은 상황에 스타일을 적용하려면 중괄호 안에서 즉시로 객체를 만들어주면 적용 가능하다.
 
+
+## 높이와 넓이
+- 고정된 면적값: `height`와 `width`으로 지정할 수 있는데 단위는 없다. 픽셀로 표현된다.
+- 가변된 면적값: 가용 공간 내에서 동적으로 변하는 값인 `flex`라는 속성으로 가변 면적을 할당할 수 있다. 이때 부모가 `height` 혹은 `flex` 값을 가지고 있어야만 가변 값이 표현된다.
+
+
+## 레이아웃과 플렉스박스(Flexbox)
+- 플렉스 박스: `flex` 속성을 가진 부모 및의 자식 엘리먼트들을 일컫는 말
+- `flexDirection`: 플렉스박스가 어떤 형태/방향으로 표현될 것인지 정의할 수 있다. `row`(default) 수평이나 `column` 수직으로 표현할 수 있다.
+- `justifyContent`: 플렉스박스가 어떤 식으로 분포될 것인지를 정의할 수 있다. `flex-start`(default), `flex-end`, `center`, `space-around`, `space-between`
+- `alignItems`: 플렉스박스가 어떻게 정렬될 것인지 정의할 수 있다. `flex-start`, `flex-end`, `center`, `stretch`

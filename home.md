@@ -120,5 +120,6 @@
 - [history.md](http://til.wiki.dev/Cordova/history)
 
 ## 12. ReactNative
-- [tutorial.me](http://til.wiki.dev/ReactNative/tutorial)
+- [tutorial.md](http://til.wiki.dev/ReactNative/tutorial)
+- [cheatsheet.md](http://til.wiki.dev/ReactNative/cheatsheet)
 

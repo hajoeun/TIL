@@ -8,6 +8,12 @@ _[출처](https://facebook.github.io/react-native/docs/tutorial.html)_
     1. ES2015(ES6)를 기준으로 한다. 
     2. 고로 화살표 함수를 지원한다.
     3. JSX(JavaScript XML)를 템플릿 언어로 사용한다. (자바스크립트 내부의 마크업 언어)
+- Virtual DOM: 속도 저하를 야기하는 DOM 업데이트를 효과적으로 처리하기 위해 만든 가상 DOM, 성능 향상에 기여한다.
+    1. 데이터가 업데이트되면, 전체 UI를 Virtual DOM에 리렌더링한다.
+    2. 이전 Virtual DOM의 내용과 현재의 내용을 비교한다.
+    3. 변경 사항만 실제 DOM에 반영한다.
+- Components: React는 모두 Component를 기반으로 동작한다.
+
 
 ## Component and AppRegistry
 - `AppRegistry`라는 객체에 `Component` 객체를 등록하면 원하는 앱이 빌드된다.

@@ -3,7 +3,7 @@ _[출처](https://facebook.github.io/react-native/docs/tutorial.html)_
 
 
 ## ReactNative 특징
-- 리액트의 철학을 바탕으로 만들어진 하이브리드 앱 개발 프레임워크
+- 리액트의 철학을 바탕으로 만들어진 하이브리드 앱 개발 프레임워크 "Learn Once, Write Anywhere"
 - 문법적인 특징 
     1. ES2015(ES6)를 기준으로 한다. 
     2. 고로 화살표 함수를 지원한다.
@@ -13,6 +13,12 @@ _[출처](https://facebook.github.io/react-native/docs/tutorial.html)_
     2. 이전 Virtual DOM의 내용과 현재의 내용을 비교한다.
     3. 변경 사항만 실제 DOM에 반영한다.
 - Components: React는 모두 Component를 기반으로 동작한다.
+
+
+## JSX(JavaScript Extensible)
+- 사실 JSX는 JS + XML인데 XML 자체가 확장 가능한 마크업 언어라는 의미를 가지기에 JSX의 X를 Extensible로 이해해도 될 것 같다.
+- 자바스크립트 코드 안에 마크업 문법을 작성할 수 있다. 원한다면 `{}` 중괄호를 열어서 자바스크립트 문법을 표기할 수 있다.
+- 중괄호 안에서 자바스크립트 문법을 표기할 때 if-else 구문을 작성할 수 없는데, 이는 삼항연산자(ternary)로 해결하면 된다.
 
 
 ## Component and AppRegistry

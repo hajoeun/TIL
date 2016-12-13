@@ -48,3 +48,8 @@ syntax on        " 문법 하이라이트 킴"
 
 #### Auto Complete
 - `Ctrl` + `n`을 누르면 자동 완성 가능한 목록이 나옴!!
+
+
+## Vundle 설치하기
+- Vim package manager, Vundle 설치하는 방법
+- `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`

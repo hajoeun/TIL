@@ -23,3 +23,4 @@
     }
     #endif
 ```
+[참고 - Remove errors for detecting native postMessage](https://github.com/facebook/react-native/pull/10941/files)

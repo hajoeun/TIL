@@ -1,5 +1,5 @@
 # ECMAScript 6 (ES6, ECMAScript 2015)
-- 2015년 소개된 ECMAScript 6
+- 2015년 소개된 ECMAScript 6, a.k.a Harmony
 
 ## Class
 1. 정의
@@ -89,3 +89,79 @@ class Lion Speak Cat {
     }
 }
 ```
+
+
+## 비구조화 할당(Destructuring Assignment) 구문
+- 배열 또는 객체에서 데이터를 별개 변수로 추출할 수 있게 하는 자바스크립트 식
+```javascript
+var a, b, rest;
+
+[a, b] = [1, 2];
+console.log(a, b); // 1, 2
+
+[a, b, ...rest] = [1, 2, 3, 4, 5];
+console.log(rest); // 3, 4, 5
+
+{a, b} = {a: 'hello', b: 'world'} // 세미콜론 없어야 하거나
+({a, b} = {a: 'hello', b: 'world'}); // 괄호로 묶어줘야 온전한 문장
+console.log(a, b); // hello world
+```
+
+- 리터럴 식과 유사한 구문이지만 우변의 소스 변수에서 어떤 변수를 추출할지를 정의하는 값을 좌변에 할당한다.
+```javascript
+var x = [1, 2, 3, 4, 5];
+var [y, z] = x;
+console.log(y, z); // 1, 2
+```
+
+- 다양한 트릭들
+```javascript
+/* 기본값 지정 트릭 */
+var a, b;
+
+[a=5, b=7] = [1, undefined];
+console.log(a, b); // 1, 7
+
+
+/* 변수 교환하기 */
+var a = 1;
+var b = 4;
+
+[a, b] = [b, a];
+console.log(a, b); // 4, 1
+
+
+/* 함수에서 반환된 배열 구문분석하기 */
+function f() {
+  return [1, 2];
+}
+
+var a, b;
+[a, b] = f();
+console.log(a, b); // 1, 2
+
+
+/* 일부 반환값 무시하기 */
+function f() {
+  return [1, 2, 3];
+}
+
+var [a,  , c] = f();
+console.log(a, c); // 1, 3
+
+
+/* 함수 매개변수로 전달된 객체에서 필드 가져오기 */
+function userId({id}) {
+  return id;
+}
+
+var user = {
+  id: "_marpple_42",
+  name: "JE",
+  age: 28
+}
+
+console.log(userId(user)); // _marpple_42
+```
+
+

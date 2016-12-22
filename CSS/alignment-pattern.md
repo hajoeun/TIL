@@ -51,3 +51,17 @@ body {
 }
 ```
 - 테이블을 만들어서 내부 요소를 하나만 두고 이 안에서 내용이 가변하는 복수의 컨텐츠일때 반응하도록 처리한다.
+
+
+## 4. `flexbox`를 이용한 중앙 정렬 (*제일 쉬움)
+```css
+.vertical-container {
+  height: 300px;
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+```

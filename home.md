@@ -65,13 +65,10 @@
 
 
 ## 2. macOS
-
-###  a. Finder
-- [hidden-files-hide-and-show.md](http://til.wiki.dev/macOS/Finder/hidden-files-hide-and-show)
-
-###  b. Terminal
-- [rootless.md](http://til.wiki.dev/macOS/Terminal/rootless)
-- [bash.md](http://til.wiki.dev/macOS/Terminal/bash)
+- [hidden-files-hide-and-show.md](http://til.wiki.dev/macOS/hidden-files-hide-and-show)
+- [rootless.md](http://til.wiki.dev/macOS/rootless)
+- [bash.md](http://til.wiki.dev/macOS/bash)
+- [shortcut-keymaps.md](http://til.wiki.dev/macOS/shortcut-keymaps)
 
 
 ## 3. HTML

@@ -124,6 +124,7 @@
 - [cheatsheet.md](http://til.wiki.dev/ReactNative/cheatsheet)
 - [error-handling.md](http://til.wiki.dev/ReactNative/error-handling)
 - [style-guide.md](http://til.wiki.dev/ReactNative/style-guide)
+- [characters.md](http://til.wiki.dev/ReactNative/characters)
 
 
 ## 13. AWS

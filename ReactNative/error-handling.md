@@ -44,3 +44,7 @@ if (!isHTTPS && !isJSNavigation) {
   return NO;
 }
 ```
+
+## Release Error
+- Linker error introduced in 0.39 when building to device on release scheme
+- [해결책](https://github.com/facebook/react-native/issues/11285)

@@ -2,7 +2,7 @@
 
 ## NSURLError -1022
 #### App Transport Security를 설정해줘야 한다.
-- 애플의 정책 때문에 `http`로 들어오는걸 허가 해줘야한다. 
+- 애플의 정책 때문에 `http`로 들어오는걸 허가 해줘야한다.
 - [참고](http://blowmj.tistory.com/entry/iOS-iOS9-App-Transport-Security-%EC%84%A4%EC%A0%95%EB%B2%95)
 
 
@@ -24,3 +24,23 @@
     #endif
 ```
 [참고 - Remove errors for detecting native postMessage](https://github.com/facebook/react-native/pull/10941/files)
+
+
+## 외부 앱 열기
+- Custom URL Scheme을 열도록 허가 하기 위해선 두가지 방법이 존재한다.
+1. `Info.plist`에 `LSApplicationQueriesSchemes` 안에 커스텀 스킴을 등록해준다.
+2. 네이티브 코드를 고쳐서 `https` 관련 링크가 아니면 자체적으로 열도록 하기
+```objective-c
+BOOL isJSNavigation = [request.URL.scheme isEqualToString:RCTJSNavigationScheme];
+BOOL isHTTPS = [request.URL.scheme isEqualToString:@"https"];
+
+//  NSURL *httpURL = [NSURL URLWithString:@"http://"];
+//  NSURL *httpsURL = [NSURL URLWithString:@"https://"];
+
+if (!isHTTPS && !isJSNavigation) {
+  UIApplication *application = [UIApplication sharedApplication];
+  [application openURL:request.URL];
+
+  return NO;
+}
+```

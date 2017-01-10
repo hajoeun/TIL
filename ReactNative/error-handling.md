@@ -30,7 +30,7 @@
 - Custom URL Scheme을 열도록 허가 하기 위해선 두가지 방법이 존재한다.
 1. `Info.plist`에 `LSApplicationQueriesSchemes` 안에 커스텀 스킴을 등록해준다.
 2. 네이티브 코드를 고쳐서 `https` 관련 링크가 아니면 자체적으로 열도록 하기
-```objective-c
+```
 BOOL isJSNavigation = [request.URL.scheme isEqualToString:RCTJSNavigationScheme];
 BOOL isHTTPS = [request.URL.scheme isEqualToString:@"https"];
 
@@ -48,3 +48,8 @@ if (!isHTTPS && !isJSNavigation) {
 ## Release Error
 - Linker error introduced in 0.39 when building to device on release scheme
 - [해결책](https://github.com/facebook/react-native/issues/11285)
+
+
+## Android WebView error
+- WebView 내부에 JavaScript 코드가 동작하지 않는 문제
+- 해결책: ES6 코드가 동작하지 않는다! 모두 ES5로 변환할 것!!

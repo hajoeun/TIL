@@ -52,4 +52,4 @@ if (!isHTTPS && !isJSNavigation) {
 
 ## Android WebView error
 - WebView 내부에 JavaScript 코드가 동작하지 않는 문제
-- 해결책: ES6 코드가 동작하지 않는다! 모두 ES5로 변환할 것!!
+- 해결책: ES6 코드가 동작하지 않는다! 모두 ES5로 변환할 것!! && 반드시 세미콜론으로 코드를 잘 구분해줘야한다.

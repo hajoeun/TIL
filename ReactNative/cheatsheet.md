@@ -11,4 +11,5 @@
 
 ## 릴리즈를 위한 번들링
 - 책에 나와 있는 `react-native bundle --minify`는 안된다.
-- `react-native bundle --entry-file index.ios.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios`
+- iOS: `react-native bundle --entry-file index.ios.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios`
+- Android: `react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/`

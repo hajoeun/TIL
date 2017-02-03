@@ -129,6 +129,8 @@
 
 ## 13. AWS
 - [setting.md](http://til.wiki.dev/AWS/setting)
+- [basic-concepts.md](http://til.wiki.dev/AWS/basic-concepts)
+- [cloud-computing.md](http://til.wiki.dev/AWS/cloud-computing)
 
 
 ## 14. http

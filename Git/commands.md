@@ -20,3 +20,9 @@ git remote -v #저장소 위치 변경 확인
 git add . #모든 내용 추가
 git commit -m "subject: commit sentance"
 ```
+
+
+#### 클론
+```bash
+git clone https://username@hostname/project/repository.git
+```

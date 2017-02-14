@@ -26,3 +26,17 @@ git commit -m "subject: commit sentance"
 ```bash
 git clone https://username@hostname/project/repository.git
 ```
+
+
+#### 되돌리기
+- 수정한 파일 되돌리기
+```bash
+git checkout -- /path/filename.md
+```
+
+- 이미 커밋한 내용에 추가로 add 하기
+```bash
+git commit -m "first commit"
+git add forgotten_file
+git commit --amend
+```

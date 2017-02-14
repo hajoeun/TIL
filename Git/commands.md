@@ -26,3 +26,10 @@ git commit -m "subject: commit sentance"
 ```bash
 git clone https://username@hostname/project/repository.git
 ```
+
+
+#### 되돌리기
+- 수정한 파일 되돌리기
+```
+git checkout -- /path/filename.md
+```

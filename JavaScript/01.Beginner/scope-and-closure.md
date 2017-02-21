@@ -95,3 +95,8 @@ console.log(myQuo.get_status()); //여기서 get_status()는 status 매개변수
 ## 4. [let 키워드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/let#Block_scope_with_let)
 - ECMAScript2015(ES6)에서는 var대신 let 키워드를 이용하여 블록 스코프를 지원한다.
 - let 키워드는 블록 스코프를 갖는 지역 변수를 선언하며, 임의로 값을 초기화할 수 있다.
+
+
+## 5. const 키워드
+- let과 마찬가지로 블록 스코프에서 동작한다.
+- 다른 점은 상수라는 점이다. 한번 선언되면 값을 변경할 수 없다.

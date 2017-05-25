@@ -165,3 +165,39 @@ console.log(userId(user)); // _marpple_42
 ```
 
 
+## String 오브젝트
+1. `includes` 함수: 인자로 전달된 문자열이 포함되어 있는지 확인한다.
+```javascript
+let target = "123abc567";
+target.includes('abc'); // true
+target.includes('3a'); // true
+target.includes('12', 4) // false
+```
+
+2. `startsWith` 함수: 인자로 전달된 문자열로 시작하는지 확인한다.
+```javascript
+let target = "123abc567";
+target.startsWith('abc'); // false
+target.startsWith('123'); // true
+target.startsWith('abc', 3) // true
+``` 
+
+3. `endsWith` 함수: 인자로 전달된 문자열로 끝나는지 확인한다.
+```javascript
+let target = "123abc567";
+target.endsWith('7'); // true
+target.endsWith('567'); // true
+target.endsWith('abc', 6) // true, 여섯글자까지 잘라서 그 끝을 확인
+```
+
+4. `repeat` 함수: 문자열을 복제한다.
+```javascript
+let target = "123";
+target.repeat(3); // 123123123
+target.repeat(0); // ""
+target.repeat(2.7); // 123123
+```
+
+
+## Template 리터럴
+- 

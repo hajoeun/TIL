@@ -166,7 +166,7 @@ console.log(userId(user)); // _marpple_42
 
 
 ## String 오브젝트
-1. `includes` 함수: 인자로 전달된 문자열이 포함되어 있는지 확인한다.
+1. `String.prototype.includes` 함수: 인자로 전달된 문자열이 포함되어 있는지 확인한다.
 ```javascript
 let target = "123abc567";
 target.includes('abc'); // true
@@ -174,7 +174,7 @@ target.includes('3a'); // true
 target.includes('12', 4) // false
 ```
 
-2. `startsWith` 함수: 인자로 전달된 문자열로 시작하는지 확인한다.
+2. `String.prototype.startsWith` 함수: 인자로 전달된 문자열로 시작하는지 확인한다.
 ```javascript
 let target = "123abc567";
 target.startsWith('abc'); // false
@@ -182,7 +182,7 @@ target.startsWith('123'); // true
 target.startsWith('abc', 3) // true
 ``` 
 
-3. `endsWith` 함수: 인자로 전달된 문자열로 끝나는지 확인한다.
+3. `String.prototype.endsWith` 함수: 인자로 전달된 문자열로 끝나는지 확인한다.
 ```javascript
 let target = "123abc567";
 target.endsWith('7'); // true
@@ -190,7 +190,7 @@ target.endsWith('567'); // true
 target.endsWith('abc', 6) // true, 여섯글자까지 잘라서 그 끝을 확인
 ```
 
-4. `repeat` 함수: 문자열을 복제한다.
+4. `String.prototype.repeat` 함수: 문자열을 복제한다.
 ```javascript
 let target = "123";
 target.repeat(3); // 123123123
@@ -200,4 +200,103 @@ target.repeat(2.7); // 123123
 
 
 ## Template 리터럴
-- 
+1. 개요 
+- 역따옴표(\`\`) 안에 작성한 문자열은 템플릿으로 처리된다. `${}`으로 감싸면 표현식을 사용할 수 있다.
+```javascipt
+console.log(`123abc`); 
+// 123abc
+console.log(`1line \n 2line`); 
+/* 
+1line
+2line
+*/
+console.log(`1line
+2line`);
+/* 
+1line
+2line
+*/
+
+let one = 1, two = 2;
+console.log(`1 + 2 = ${one + two}`); // 1 + 2 = 3
+```
+
+1. tagged Template: ``` tag `문자열 ${expression} 문자열` ```와 같은 형태로 템플릿 앞에 tag를 작성한 형태를 태그드 템플릿이라고 부른다.
+```javascript
+var tagFunc = function(str, val1, val2) { console.log(str, val1, val2) }
+var one = 1, two = 2;
+
+tagFunc `123 ${one + two} 456 ${one - two}`;
+// ['123 ', ' 456'] 3 -1
+```
+
+2. `String.raw`: (태그드) 템플릿 표현식은 변환하고 특수 문자와 유니코드는 문자열 그대로 인식한다.
+```javascript
+var one = 1, two = 2;
+console.log(`123 ${one + two} \n456 ${one - two}`);
+/*
+123 3
+456 -1
+*/
+console.log(String.raw `123 ${one + two} \n456 ${one - two}`);
+// 123 3 \n456 -1
+```
+
+3. `String.raw` 함수: `String.raw({raw: "문자열"}, any...)`의 형태로 사용하여 raw 값에 any를 하나씩 전개하여 조합한 문자열을 만들어준다.
+```javascript
+var one = 1, two = 2;
+var res = String.raw({raw: "ABCDE"}, one, two, 3);
+console.log(res);
+// A1B2C3DE
+```
+
+
+## Array 오브젝트
+1. `Array.from` 함수: 새로운 Array 오브젝트를 생성하고 이터레이터에서 반환된 값을 엘리먼트 값으로 설정하여 배열을 반환한다.
+```javascript
+var arr_like = {0: 'zero', 1: 'one', length: 2};
+var arr = Array.from(arr_like); // 객체의 경우 반드시 Array-like 객체를 전달해야 한다!
+console.log(arr); // ['zero', 'one']
+
+var arr2 = Array.from('abc'); // 문자열과 같은 이터러블 객체도 바꿔준다.
+console.log(arr2); // ['a', 'b', 'c']
+
+var arr3 = Array.from(arr_like, function(v, k) {
+    return v + k;
+});
+console.log(arr3); // ['zero0', 'one1']
+```
+
+2. `Array.of` 함수: 파라미터 값을 새로운 배열의 엘리먼트로 설정하여 반환한다.
+```javascript
+var arr = Array.of(1, 2, 3);
+console.log(arr); // [1, 2, 3]
+```
+
+3. `Array.prototype.copyWithin` 함수: 인덱스 범위의 값을 복사하여 같은 배열의 지정한 위치에 설정한다.
+- `[1, 2, 3, 4, 5].copyWithin(paste_start_idx, copy_start_idx, copy_end_idx)`
+```javascript
+var one = [1, 2, 3, 4, 5];
+console.log(one.copyWithin(0, 3)); // [4, 5, 3, 4, 5]
+var two = [1, 2, 3, 4, 5];
+console.log(two.copyWithin(0, 2, 4)); // [3, 4, 3, 4, 5]
+var three = [1, 2, 3, 4, 5];
+console.log(three.copyWithin(3)); // [1, 2, 3, 1, 2]
+
+var arr_like = {0: 'ABC', 1: 'DEF', 2: '가나다', length: 3}
+var four = Array.prototype.copyWithin.call(arr_like, 0, 1);
+console.log(four); // ['DEF', '가나다', '가나다']
+```
+
+4. `Array.prototype.fill` 함수: 같은 배열에서 인덱스 범위의 값을 지정한 값으로 바꾸어 반환한다.
+- `[1, 2, 3, 4, 5].fill(value, start_idx, end_idx)`
+```javascript
+var one = [1, 2, 3];
+console.log(one.fill(7)); // [7, 7, 7]
+var two = [1, 2, 3, 4, 5];
+console.log(two.fill(7, 1)); // [1, 7, 7, 7, 7]
+var three = [1, 2, 3, 4, 5];
+console.log(three.fill(7, 1, 3)); // [1, 7, 7, 4, 5]
+```
+
+5. `Array.prototype.entries` 함수: 

@@ -299,4 +299,15 @@ var three = [1, 2, 3, 4, 5];
 console.log(three.fill(7, 1, 3)); // [1, 7, 7, 4, 5]
 ```
 
-5. `Array.prototype.entries` 함수: 
+5. `Array.prototype.entries` 함수: 객체를 이터레이터 객체로 생성해서 반환한다.
+```javascript
+var values = [10, 20, 30];
+var iterator = values.entries();
+console.log(iterator.next()); // { value: Array[2], done: false }
+
+for (var [key, value] of iterator){
+    console.log(key, ':', value); 
+    // 1 : 20 
+    // 2 : 30 
+}
+```

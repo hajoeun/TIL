@@ -311,3 +311,8 @@ for (var [key, value] of iterator){
     // 2 : 30 
 }
 ```
+
+
+## Generator 오브젝트
+- [참고 1](http://hacks.mozilla.or.kr/2015/08/es6-in-depth-generators/)
+- [참고 2](http://hacks.mozilla.or.kr/2016/02/es6-in-depth-generators-continued/)

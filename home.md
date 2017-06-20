@@ -139,3 +139,6 @@
 
 ## 15. OS
 - [introduction-to-os.md](http://til.wiki.dev/OS/introduction-to-os)
+
+## 16. Etc
+- [pandoc.md](http://til.wiki.dev/Etc/pandoc)

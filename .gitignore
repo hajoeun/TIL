@@ -2,3 +2,6 @@
 JavaScript/*.js
 JavaScript/*.html
 question.md
+*.txt
+*.c
+*.ex

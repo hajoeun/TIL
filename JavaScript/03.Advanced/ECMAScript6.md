@@ -316,3 +316,34 @@ for (var [key, value] of iterator){
 ## Generator 오브젝트
 - [참고 1](http://hacks.mozilla.or.kr/2015/08/es6-in-depth-generators/)
 - [참고 2](http://hacks.mozilla.or.kr/2016/02/es6-in-depth-generators-continued/)
+
+
+## Proxy 오브젝트
+- '대용물', '대리자'를 의미하는 프록시
+- 타겟(target): 첫번째 파라미터에 해당하는 값, 대상이 되는 객체
+- 트랩(trap): getter, setter
+- 핸들러(handler): 두번째 파라미터에 해당하는 값, 트랩이 작성된 객체
+
+```javascript
+var target = { name: 'JE', age: 29 };
+var handler = { 
+    get(target, key) {
+        console.log(target, key);
+        return target[key];
+    }, 
+    set(target, key, value, receiver) {
+        console.log(target, key, value, receiver);
+        target[key] = value;
+        return true; // 할당에 성공하면 true, 문제가 생기면 false (해석 엔진에게 전달하는 부분)
+    } };
+var proxy = new Proxy(target, handler);
+
+console.log(proxy); // Proxy { name: 'JE', age: 29 }
+console.log(target); // { name: 'JE', age: 29 }
+
+console.log(proxy.name); // { name: 'JE', age: 29 } 'name' // JE
+proxy.job = 'developer'; // { name: 'JE', age: 29 } 'job' 'developer' Proxy { name: 'JE', age: 29 }
+
+console.log(proxy); // Proxy { name: 'JE', age: 29, job: 'developer' }
+console.log(target); // { name: 'JE', age: 29, job: 'developer' }
+```

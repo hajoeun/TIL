@@ -10,8 +10,13 @@
   export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 ```
 
-
 - 이후에 이 설정을 반영하기 위해선 터미널을 재시작하거나 `source ~/.bash_profile` 명령어로 패스가 적용되도록 해야한다.
+
+- 터미널에 컴퓨터/사용자 이름 부분 숨기기 및 변경하기 
+```bash
+ export PS1="> "
+```
+위와 같이 설정하면 `> `라고 터미널에 표시됨! 자세한 스펙은 [링크](https://www.ibm.com/developerworks/linux/library/l-tip-prompt/)를 참고.
 
 ### 폴더 만들기
 - `mkdir [폴더명]`

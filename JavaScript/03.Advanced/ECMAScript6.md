@@ -321,17 +321,18 @@ for (var [key, value] of iterator){
 ## Proxy 오브젝트
 - '대용물', '대리자'를 의미하는 프록시
 - 타겟(target): 첫번째 파라미터에 해당하는 값, 대상이 되는 객체
-- 트랩(trap): getter, setter
+- 트랩(trap): get, set과 같은 특정한 일을 하는 것을 감지하는 메서드
 - 핸들러(handler): 두번째 파라미터에 해당하는 값, 트랩이 작성된 객체
 
+- 기본 용법
 ```javascript
 var target = { name: 'JE', age: 29 };
 var handler = { 
-    get(target, key) {
-        console.log(target, key);
+    get(target, key, receiver) { // <-- 트랩
+        console.log(target, key, receiver);
         return target[key];
     }, 
-    set(target, key, value, receiver) {
+    set(target, key, value, receiver) { // <-- 트랩
         console.log(target, key, value, receiver);
         target[key] = value;
         return true; // 할당에 성공하면 true, 문제가 생기면 false (해석 엔진에게 전달하는 부분)
@@ -341,9 +342,36 @@ var proxy = new Proxy(target, handler);
 console.log(proxy); // Proxy { name: 'JE', age: 29 }
 console.log(target); // { name: 'JE', age: 29 }
 
-console.log(proxy.name); // { name: 'JE', age: 29 } 'name' // JE
+console.log(proxy.name); // { name: 'JE', age: 29 } 'name' Proxy { name: 'JE', age: 29 } // JE
 proxy.job = 'developer'; // { name: 'JE', age: 29 } 'job' 'developer' Proxy { name: 'JE', age: 29 }
 
 console.log(proxy); // Proxy { name: 'JE', age: 29, job: 'developer' }
 console.log(target); // { name: 'JE', age: 29, job: 'developer' }
+```
+
+- `revocable`: Proxy 무효화
+```javascript
+var target = { name: 'JE', age: 29 };
+var handler = { 
+    get(target, key, receiver) { // <-- 트랩
+        console.log(target, key, receiver);
+        return target[key];
+    }, 
+    set(target, key, value, receiver) { // <-- 트랩
+        console.log(target, key, value, receiver);
+        target[key] = value;
+        return true; // 할당에 성공하면 true, 문제가 생기면 false (해석 엔진에게 전달하는 부분)
+    } };
+
+var revocable_obj = Proxy.revocable(target, handler);
+
+console.log(revocable_obj.proxy.name);
+
+revocable_obj.revoke();
+
+try {
+    console.log(revocable_obj.proxy.name); 
+} catch(e) {
+    console.log("Aleary revoked!");
+}
 ```

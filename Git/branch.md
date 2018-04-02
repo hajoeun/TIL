@@ -10,7 +10,7 @@ git branch develop
 git checkout develop
 ```
 
-`-b` 옵션을 주면 브랜치를 만들면서 브랜치로 이동(checkout)까지 한다.
+`checkout` 명령어에 `-b` 옵션을 주면 브랜치를 만들면서 브랜치로 이동한다.
 ```bash
 git checkout -b develop
 ```

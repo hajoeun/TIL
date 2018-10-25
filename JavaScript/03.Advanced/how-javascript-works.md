@@ -19,6 +19,22 @@
     - 최대한 mono로 가야하는데, class로 할 수도 있고 매번 같은 형태의 객체로 만들어주면 해결된다. (특정 프로퍼티에 값이 비었더라도 빈 상태로 일일이 넣어주거나)
   - 참고: [위키피디아](https://ko.wikipedia.org/wiki/JIT_%EC%BB%B4%ED%8C%8C%EC%9D%BC), 나무위키(https://namu.wiki/w/JIT), 블로그1(https://blog.perfectacle.com/2017/08/07/js-jit-compile/), 블로그2(http://devtimothy.tistory.com/94?fbclid=IwAR19hQXARg75Bcav30Hldy0qqQaNMUZh-Gcs8Pgmrp8NMzgCDSDmmaFBQpM)
 
+## 2. 이벤트 루프(Event Loop)와 비동기(Async) 프로그래밍
+  - 자바스크립트는 싱글스레드 언어다. 하나의 콜스택(Call Stack), 하나의 런타임(Runtime)을 가진다는 뜻이다. __자바스크립트는 한번에 하나의 일 밖에 하지 못한다.__
+  - V8 엔진에는 비동기를 처리하는 API(WebAPI)가 포함되어 있지 않다. WebAPI는 브라우저가 제공한다. 
+  - 그리고 브라우저는 이벤트 루프와 콜백 큐(Callback Que)를 제공한다. (이것들 덕분에 자바스크립트가 한번에 여러일을 하는 것처럼 느껴진다.)
+  - 콜스택의 동작: 
+    1. 함수가 실행되면 콜스택에 쌓인다. 
+    2. `return`을 만나서 함수가 종료되면 콜스택에서 빠져나온다.
+  - 만약에 콜스택에 들어가는 함수가 동기적(Sync)으로 동작한다면 실행될 시기가 늦춰지게 된다. 이게 블로킹(Blocking)이다. 해야할 일이 막히는 것! 그렇게 되면 다른 브라우저의 동작이 다 멈춘다.
+  - 비동기 프로그래밍: 
+    - 블로킹을 피하기 위해 시간이 오래 걸리는 작업을 비동기적(Async)으로 작업해야한다.
+    - 그럼 논블록(Non-Block) 상태가 된다. V8 엔진은 멈추지 않고 코드를 해석해나갈 수 있다.
+    - 비동기 작업은 콜백 함수의 형태로 WebAPI에게 맡긴다. Ajax, Timeout 같은 작업이다.
+    - 콜백 함수는 WebAPI가 작업을 마쳤을 때 콜백 큐로 들어가서 대기한다.
+    - 이벤트 루프는 엔진의 콜스택을 지켜보다가 콜스택이 비었을 때 콜백 큐에 쌓인 콜백 함수를 콜스택으로 보낸다. (주차장 안내요원 같다.)
+    - 이런 과정을 거쳐서 비동기 프로그래밍이 가능해진다.
+  - 참고: [Youtube - Philip Roberts](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
 
-## 2. 메모리 누수
+## 3. 메모리 누수
   - 참고: [블로그1](https://engineering.huiseoul.com/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%9E%91%EB%8F%99%ED%95%98%EB%8A%94%EA%B0%80-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EA%B4%80%EB%A6%AC-4%EA%B0%80%EC%A7%80-%ED%9D%94%ED%95%9C-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EB%88%84%EC%88%98-%EB%8C%80%EC%B2%98%EB%B2%95-5b0d217d788d)

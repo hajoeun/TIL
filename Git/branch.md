@@ -29,6 +29,12 @@ git merge develop
 git branch -d develop
 ``` 
 
+### default branch 변경하기
+
+```bash
+git branch -m master main # git branch -m {기존 브랜치 이름} {변경할 브랜치 이름}
+git push -u origin main
+```
 
 
 - [Merge와 Rebase의 차이](https://backlog.com/git-tutorial/kr/stepup/stepup1_4.html)
